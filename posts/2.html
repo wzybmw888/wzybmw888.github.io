@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="[python实战项目开发]3.1-使用urllib, 经济学，学习，专注web等">
+    <meta name="keywords" content="[python3网络爬虫开发实战]1-开发环境配置, 经济学，学习，专注web等">
     <meta name="description" content="一个较真的理工男，专注于前端设计，经济分析，机械设计等专业！共享学习资料，与您一起前进！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[python实战项目开发]3.1-使用urllib | Mossloo博客</title>
+    <title>[python3网络爬虫开发实战]1-开发环境配置 | Mossloo博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://wzy-1302043975.cos.ap-shanghai.myqcloud.com/catoon/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://wzy-1302043975.cos.ap-shanghai.myqcloud.com/catoon/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[python实战项目开发]3.1-使用urllib</h1>
+                    <h1 class="description center-align post-title">[python3网络爬虫开发实战]1-开发环境配置</h1>
                 </div>
             </div>
         </div>
@@ -417,14 +417,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    308
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    10 分
                 </div>
                 
 
@@ -439,16 +439,122 @@ if (windowWidth > 768) {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在Python 2中，有urllib和urllib2两个库来实现请求的发送。而在Python 3中，已经不存在urllib2这个库了，统一为urllib，其官方文档链接为：<a href="https://docs.python.org/3/library/urllib.html。" target="_blank" rel="noopener">https://docs.python.org/3/library/urllib.html。</a></p>
-<p>首先，了解一下urllib库，它是Python内置的HTTP请求库，也就是说不需要额外安装即可使用。它包含如下4个模块。</p>
-<ul>
-<li><strong><code>request</code></strong>：它是最基本的HTTP请求模块，可以用来模拟发送请求。就像在浏览器里输入网址然后回车一样，只需要给库方法传入URL以及额外的参数，就可以模拟实现这个过程了。</li>
-<li><strong><code>error</code></strong>：异常处理模块，如果出现请求错误，我们可以捕获这些异常，然后进行重试或其他操作以保证程序不会意外终止。</li>
-<li><strong><code>parse</code></strong>：一个工具模块，提供了许多URL处理方法，比如拆分、解析、合并等。</li>
-<li><strong><code>robotparser</code></strong>：主要是用来识别网站的robots.txt文件，然后判断哪些网站可以爬，哪些网站不可以爬，它其实用得比较少。</li>
+                <h1 id="python3的安装"><a href="#python3的安装" class="headerlink" title="python3的安装"></a>python3的安装</h1><p> 既然要用Python 3开发爬虫，那么第一步一定是安装Python 3。这里会介绍Windows、Linux和Mac三大平台下的安装过程 </p>
+<h2 id="1-相关链接"><a href="#1-相关链接" class="headerlink" title="1. 相关链接"></a>1. 相关链接</h2><ul>
+<li>官方网站：<a href="http://python.org/" target="_blank" rel="noopener">http://python.org</a></li>
+<li>下载地址：<a href="https://www.python.org/downloads" target="_blank" rel="noopener">https://www.python.org/downloads</a></li>
+<li>第三方库：<a href="https://pypi.python.org/pypi" target="_blank" rel="noopener">https://pypi.python.org/pypi</a></li>
+<li>官方文档：<a href="https://docs.python.org/3" target="_blank" rel="noopener">https://docs.python.org/3</a></li>
+<li>中文教程：<a href="http://www.runoob.com/python3/python3-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/python3/python3-tutorial.html</a></li>
+<li>Awesome Python：<a href="https://github.com/vinta/awesome-python" target="_blank" rel="noopener">https://github.com/vinta/awesome-python</a></li>
+<li>Awesome Python中文版：<a href="https://github.com/jobbole/awesome-python-cn" target="_blank" rel="noopener">https://github.com/jobbole/awesome-python-cn</a></li>
 </ul>
-<p>这里重点讲解一下前3个模块。</p>
-<p>转载：<a href="https://cuiqingcai.com/" target="_blank" rel="noopener">静觅</a> » <a href="https://cuiqingcai.com/5497.html" target="_blank" rel="noopener">[Python3网络爬虫开发实战] 3.1-使用urllib</a></p>
+<h2 id="2-Windows下的安装"><a href="#2-Windows下的安装" class="headerlink" title="2. Windows下的安装"></a>2. Windows下的安装</h2><p>在Windows下安装Python 3的方式有两种。</p>
+<ul>
+<li>一种是通过Anaconda安装，它提供了Python的科学计算环境，里面自带了Python以及常用的库。如果选用了这种方式，后面的环境配置方式会更加简便。</li>
+<li>另一种是直接下载安装包安装，即标准的安装方式。</li>
+</ul>
+<p>下面我们依次介绍这两种安装方式，任选其一即可。</p>
+<h3 id="1-Anaconda安装"><a href="#1-Anaconda安装" class="headerlink" title="(1) Anaconda安装"></a>(1) Anaconda安装</h3><p>Anaconda的官方下载链接为<a href="https://www.continuum.io/downloads，选择Python" target="_blank" rel="noopener">https://www.continuum.io/downloads，选择Python</a> 3版本的安装包下载即可，如图1-1所示。</p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=1708002eb50fe93aef25" alt="图像说明文字"> </p>
+<p>如果下载速度过慢，可以选择使用清华大学镜像，下载列表链接为<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/，使用说明链接为https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/。" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/，使用说明链接为https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/。</a></p>
+<p>下载完成之后，直接双击安装包安装即可。安装完成之后，Python 3的环境就配置好了。</p>
+<h3 id="2-安装包安装"><a href="#2-安装包安装" class="headerlink" title="(2) 安装包安装"></a>(2) 安装包安装</h3><p>我们推荐直接下载安装包来安装，此时可以直接到官方网站下载Python 3的安装包：<a href="https://www.python.org/downloads/。" target="_blank" rel="noopener">https://www.python.org/downloads/。</a></p>
+<p>写书时，Python的最新版本1是3.6.2，其下载链接为<a href="https://www.python.org/downloads/release/python-362/，下载页面如图1-2所示。需要说明的是，实际的Python最新版本以官网为准。" target="_blank" rel="noopener">https://www.python.org/downloads/release/python-362/，下载页面如图1-2所示。需要说明的是，实际的Python最新版本以官网为准。</a></p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=170831c80abe71970c38" alt="图像说明文字"> </p>
+<p>64位系统可以下载Windows x86-64 executable installer，32位系统可以下载Windows x86 executable installer。</p>
+<p>下载完成之后，直接双击Python安装包，然后通过图形界面安装，接着设置Python的安装路径，完成后将Python 3和Python 3的Scripts目录配置到环境变量即可。</p>
+<p>关于环境变量的配置，此处以Windows 10系统为例进行演示。</p>
+<p>假如安装后的Python 3路径为C:\Python36，从资源管理器中打开该路径，如图1-3所示。</p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=17082965ee593cae2365" alt="图像说明文字"> </p>
+<p>将该路径复制下来。</p>
+<p>随后，右击“计算机”，从中选择“属性”，此时将打开系统属性窗口，如图1-4所示。</p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=1708cdd34354955d1fde" alt="图像说明文字"> </p>
+<p>点击左侧的“高级系统设置”，即可看到在弹出的对话框下方看到“环境变量”按钮，如图1-5所示。</p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=1708d35844164e63b26a" alt="图像说明文字"> </p>
+<p> 点击“环境变量”按钮，找到系统变量下的Path变量，随后点击“编辑”按钮，如图1-6所示。 </p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=1708e0b523729330b0e8" alt="图像说明文字"> </p>
+<p>随后点击“新建”，新建一个条目，将刚才复制的C:\Python36复制进去。这里需要说明的是，此处的路径就是你的Python 3安装目录，请自行替换。然后，再把C:\Python36\Scripts路径复制进去，如图1-7所示。</p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=1708d8f0669ffcf518a7" alt="图像说明文字"> </p>
+<p>最后，点击“确定”按钮即可完成环境变量的配置。</p>
+<p>配置好环境变量后，我们就可以在命令行中直接执行环境变量路径下的可执行文件了，如<code>python</code>、<code>pip</code>等命令。</p>
+<h3 id="3-添加别名"><a href="#3-添加别名" class="headerlink" title="(3) 添加别名"></a>(3) 添加别名</h3><p>上面这两种安装方式任选其一即可完成安装，但如果之前安装过Python 2的话，可能会导致版本冲突问题，比如在命令行下输入<code>python</code>就不知道是调用的Python 2还是Python 3了。为了解决这个问题，建议将安装目录中的python.exe复制一份，命名为python3.exe，这样便可以调用<code>python3</code>命令了。实际上，它和<code>python</code>命令是完全一致的，这样只是为了可以更好地区分Python版本。当然，如果没有安装过Python 2的话，也建议添加此别名，添加完毕之后的效果如图1-8所示。</p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=17089ea4c3d0be341d8e" alt="图像说明文字"> </p>
+<p> 对于pip来说，安装包中自带了pip3.exe可执行文件，我们也可以直接使用<code>pip3</code>命令，无需额外配置。 </p>
+<h3 id="4-测试验证"><a href="#4-测试验证" class="headerlink" title="(4) 测试验证"></a>(4) 测试验证</h3><p>安装完成后，可以通过命令行测试一下安装是否成功。在“开始”菜单中搜索<code>cmd</code>，找到命令提示符，此时就进入命令行模式了。输入<code>python</code>，测试一下能否成功调用Python。如果添加了别名的话，可以输入<code>python3</code>测试，这里输入的是<code>python3</code>，测试结果如图1-9所示。</p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=17089590fa9f68124670" alt="图像说明文字"> </p>
+<p> 输出结果类似如下： </p>
+<pre><code>$ python3
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 17:54:52) [MSC v.1900 32 bit (Intel)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; print(&#39;Hello World&#39;)
+Hello World
+&gt;&gt;&gt; exit()
+$ pip3 -V
+pip 9.0.1 from c:\python36\lib\site-packages (python 3.6)</code></pre><p> 如果出现了类似上面的提示，则证明Python 3和pip 3均安装成功；如果提示命令不存在，那么请检查下环境变量的配置情况。 </p>
+<h2 id="3-Linux下的安装"><a href="#3-Linux下的安装" class="headerlink" title="3. Linux下的安装"></a>3. Linux下的安装</h2><p>Linux下的安装方式有多种：命令安装、源码安装和Anaconda安装。</p>
+<p>使用源码安装需要自行编译，时间较长。推荐使用系统自带的命令或Anaconda安装，简单、高效。这里分别讲解这3种安装方式。</p>
+<h3 id="1-命令行安装"><a href="#1-命令行安装" class="headerlink" title="(1) 命令行安装"></a>(1) 命令行安装</h3><p>不同的Linux发行版本的安装方式又有不同，在此分别予以介绍。</p>
+<h4 id="CentOS、Red-Hat"><a href="#CentOS、Red-Hat" class="headerlink" title="CentOS、Red Hat"></a>CentOS、Red Hat</h4><p>如果是CentOS或Red Hat版本，则使用<code>yum</code>命令安装即可。</p>
+<p>下面列出了Python 3.5和Python 3.4两个版本的安装方法，可以自行选择。</p>
+<p>Python 3.5版本：</p>
+<pre><code>sudo yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+sudo yum update
+sudo yum install -y python35u python35u-libs python35u-devel python35u-pip</code></pre><p>执行完毕后，便可以成功安装Python 3.5及pip 3了。</p>
+<p>Python 3.4版本：</p>
+<pre><code>sudo yum groupinstall -y development tools
+sudo yum install -y epel-release python34-devel  libxslt-devel libxml2-devel openssl-devel
+sudo yum install -y python34
+sudo yum install -y python34-setuptools
+sudo easy_install-3.4 pip</code></pre><p> 执行完毕后，便可以成功安装Python 3.4及pip 3了。 </p>
+<h4 id="Ubuntu、Debian和Deepin"><a href="#Ubuntu、Debian和Deepin" class="headerlink" title="Ubuntu、Debian和Deepin"></a>Ubuntu、Debian和Deepin</h4><p> 首先安装Python 3，这里使用<code>apt-get</code>安装即可。在安装前，还需安装一些基础库，相关命令如下： </p>
+<pre><code>
+sudo apt-get install -y python3-dev build-essential libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev zlib1g-dev libcurl4-openssl-dev
+sudo apt-get install -y python3</code></pre><p>执行完上述命令后，就可以成功安装Python 3了。</p>
+<p>然后还需要安装pip 3，这里仍然使用<code>apt-get</code>安装即可，相关命令如下：</p>
+<pre><code>sudo apt-get install -y python3-pip</code></pre><p> 执行完毕后，便可以成功安装Python 3及pip 3了。 </p>
+<h3 id="2-源码安装"><a href="#2-源码安装" class="headerlink" title="(2) 源码安装"></a>(2) 源码安装</h3><p>如果命令行的安装方式有问题，还可以下载Python 3源码进行安装。</p>
+<p>源码下载地址为<a href="https://www.python.org/ftp/python/，可以自行选用想要的版本进行安装。这里以Python" target="_blank" rel="noopener">https://www.python.org/ftp/python/，可以自行选用想要的版本进行安装。这里以Python</a> 3.6.2为例进行说明，安装路径设置为/usr/local/python3。</p>
+<p>首先，创建安装目录，相关命令如下：</p>
+<pre><code>sudo mkdir /usr/local/python3</code></pre><p> 随后下载安装包并解压进入，相关命令如下： </p>
+<pre><code>wget --no-check-certificate https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz
+tar -xzvf Python-3.6.2.tgz
+cd Python-3.6.2</code></pre><p> 接下来，编译安装。所需的时间可能较长，请耐心等待，命令如下： </p>
+<pre><code>sudo ./configure --prefix=/usr/local/python3
+sudo make
+sudo make install</code></pre><p>安装完成之后，创建Python 3链接，相关命令如下：</p>
+<pre><code>
+sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python3</code></pre><p>  随后下载pip安装包并安装，命令如下： </p>
+<pre><code>wget --no-check-certificate https://github.com/pypa/pip/archive/9.0.1.tar.gz
+tar -xzvf 9.0.1.tar.gz
+cd pip-9.0.1
+python3 setup.py install</code></pre><p> 安装完成后再创建pip 3链接，相关命令如下： </p>
+<pre><code>sudo ln -s /usr/local/python3/bin/pip /usr/bin/pip3</code></pre><p> 这样就成功安装好了Python 3及pip 3。 </p>
+<h3 id="3-Anaconda安装"><a href="#3-Anaconda安装" class="headerlink" title="(3) Anaconda安装"></a>(3) Anaconda安装</h3><p>Anaconda同样支持Linux，其官方下载链接为<a href="http://epub.ituring.com.cn/article/edit/[https://www.continuum.io/downloads" target="_blank" rel="noopener">https://www.continuum.io/downloads</a>，选择Python 3版本的安装包下载即可，如图1-10所示。</p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=1708a13922b218a1bbb2" alt="图像说明文字"> </p>
+<p>图1-10 Anaconda Linux下载页面</p>
+<p>如果下载速度过慢，同样可以使用清华镜像，具体可参考Windows部分的介绍，在此不再赘述。</p>
+<h3 id="4-测试验证-1"><a href="#4-测试验证-1" class="headerlink" title="(4) 测试验证"></a>(4) 测试验证</h3><p>在命令行界面下测试Python 3和pip 3是否安装成功：</p>
+<pre><code>$ python3
+Python 3.5.2 (default, Nov 17 2016, 17:05:23) 
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; exit()
+$ pip3 -V
+pip 8.1.1 from /usr/lib/python3/dist-packages (python 3.5)</code></pre><p> 若出现类似上面的提示，则证明Python 3和pip 3安装成功。 </p>
+<h2 id="4-Mac下的安装"><a href="#4-Mac下的安装" class="headerlink" title="4. Mac下的安装"></a>4. Mac下的安装</h2><p>在Mac下同样有多种安装方式，如Homebrew、安装包安装、Anaconda安装等，这里推荐使用Homebrew安装。</p>
+<h3 id="1-Homebrew安装"><a href="#1-Homebrew安装" class="headerlink" title="(1) Homebrew安装"></a>(1) Homebrew安装</h3><p>Homebrew是Mac平台下强大的包管理工具，其官方网站是<a href="https://brew.sh/。" target="_blank" rel="noopener">https://brew.sh/。</a></p>
+<p>执行如下命令，即可安装Homebrew：</p>
+<pre><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></pre><p> 安装完成后，便可以使用<code>brew</code>命令安装Python 3和pip 3了： </p>
+<pre><code>brew install python3</code></pre><p>命令执行完成后，我们发现Python 3和pip 3均已成功安装。</p>
+<h3 id="2-安装包安装-1"><a href="#2-安装包安装-1" class="headerlink" title="(2) 安装包安装"></a>(2) 安装包安装</h3><p>可以到官方网站下载Python 3安装包。链接为<a href="https://www.python.org/downloads/，页面如图1-2所示。" target="_blank" rel="noopener">https://www.python.org/downloads/，页面如图1-2所示。</a></p>
+<p>在Mac平台下，可以选择下载Mac OS X 64-bit/32-bit installer，下载完成后，打开安装包按照提示安装即可。</p>
+<h3 id="3-Anaconda安装-1"><a href="#3-Anaconda安装-1" class="headerlink" title="(3) Anaconda安装"></a>(3) Anaconda安装</h3><p>Anaconda同样支持Mac，其官方下载链接为：<a href="http://epub.ituring.com.cn/article/edit/[https://www.continuum.io/downloads" target="_blank" rel="noopener">https://www.continuum.io/downloads</a>，选择Python 3版本的安装包下载即可，如图1-11所示。</p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=17089b034fd975411c37" alt="图像说明文字"> </p>
+<p> 如果下载速度过慢，同样可以使用清华镜像，具体可参考Windows部分的介绍，在此不再赘述。 </p>
+<h3 id="4-测试验证-2"><a href="#4-测试验证-2" class="headerlink" title="(4) 测试验证"></a>(4) 测试验证</h3><p>打开终端，在命令行界面中测试Python 3和pip 3是否成功安装，如图1-12所示。</p>
+<p> <img src="http://epub.ituring.com.cn/api/storage/getbykey/screenshow?key=1708788341be5f65d01e" alt="图像说明文字"> </p>
+<p>若出现上面的提示，则证明Python 3和pip 3安装成功。</p>
+<p>本节中，我们介绍了3大平台Windows、Linux和Mac下Python 3的安装方式。安装完成后，我们便可以开启Python爬虫的征程了。</p>
 
             </div>
             <hr/>
@@ -474,7 +580,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mossloo.cn/posts/1.html">https://mossloo.cn/posts/1.html</a>
+                    <a href="https://mossloo.cn/posts/2.html">https://mossloo.cn/posts/2.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -952,21 +1058,19 @@ if (windowWidth > 768) {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/2.html">
+                <a href="/posts/3.html">
                     <div class="card-image">
                         
-                        <img src="https://wzy-1302043975.cos.ap-shanghai.myqcloud.com/catoon/2.jpg" class="responsive-img" alt="[python3网络爬虫开发实战]1-开发环境配置">
+                        <img src="https://wzy-1302043975.cos.ap-shanghai.myqcloud.com/img/1.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战]1.2-请求库的安装">
                         
-                        <span class="card-title">[python3网络爬虫开发实战]1-开发环境配置</span>
+                        <span class="card-title">[Python3网络爬虫开发实战]1.2-请求库的安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python3的安装 既然要用Python 3开发爬虫，那么第一步一定是安装Python 3。这里会介绍Windows、Linux和Mac三大平台下的安装过程 
-1. 相关链接
-官方网站：http://python.org
-下载地址：htt
+                            爬虫可以简单分为几步：抓取页面、分析页面和存储数据。
+在抓取页面的过程中，我们需要模拟浏览器向服务器发出请求，所以需要用到一些Python库来实现HTTP请求操作。在本书中，我们用到的第三方库有Requests、Selenium和aioht
                         
                     </div>
                     <div class="publish-info">
@@ -1004,7 +1108,7 @@ if (windowWidth > 768) {
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/posts/1.html">
@@ -1037,7 +1141,6 @@ if (windowWidth > 768) {
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
