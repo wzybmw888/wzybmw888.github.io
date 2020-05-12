@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 经济学，学习，专注web等">
+    <meta name="keywords" content="python爬虫入门之Urllib库的基本使用, 经济学，学习，专注web等">
     <meta name="description" content="一个较真的理工男，专注于前端设计，经济分析，机械设计等专业！共享学习资料，与您一起前进！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Mossloo博客</title>
+    <title>python爬虫入门之Urllib库的基本使用 | Mossloo博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">python爬虫入门之Urllib库的基本使用</h1>
                 </div>
             </div>
         </div>
@@ -372,12 +372,29 @@ if (windowWidth > 768) {
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">爬虫</span>
+                            </a>
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                爬虫
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -386,28 +403,28 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-10
+                    2020-05-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-10
+                    2020-05-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    75
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -422,15 +439,81 @@ if (windowWidth > 768) {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h4 id="1-如何爬取网页？"><a href="#1-如何爬取网页？" class="headerlink" title="1.如何爬取网页？"></a>1.如何爬取网页？</h4><p>怎样扒网页呢？其实就是根据URL来获取它的网页信息，虽然我们在浏览器中看到的是一幅幅优美的画面，但是其实是由浏览器解释才呈现出来的，实质它是一段HTML代码，加 JS、CSS，如果把网页比作一个人，那么HTML便是他的骨架，JS便是他的肌肉，CSS便是它的衣服。所以最重要的部分是存在于HTML中的，下面我们就写个例子来扒一个网页下来。 </p>
+<pre><code class="python">import urllib2
+
+response = urllib2.urlopen(&quot;http://www.baidu.com&quot;)
+print response.read()</code></pre>
+<p>​     是的你没看错，真正的程序就两行，把它保存成 demo.py，进入该文件的目录，执行如下命令查看运行结果，感受一下。 </p>
+<pre><code class="python">python demo.py</code></pre>
+<p> <img src="http://qiniu.cuiqingcai.com/wp-content/uploads/2015/02/2015-02-13-000909-%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="2015-02-13 00:09:09 的屏幕截图"> </p>
+<p> 看，这个网页的源码已经被我们扒下来了，是不是很酸爽？ </p>
+<h2 id="2-分析扒网页的方法"><a href="#2-分析扒网页的方法" class="headerlink" title="2.分析扒网页的方法"></a>2.分析扒网页的方法</h2><p>​    那么我们来分析这两行代码，第一行 </p>
+<pre><code class="python">response = urllib2.urlopen(&quot;http://www.baidu.com&quot;)</code></pre>
+<p>  首先我们调用的是urllib2库里面的urlopen方法，传入一个URL，这个网址是百度首页，协议是HTTP协议，当然你也可以把HTTP换做FTP,FILE,HTTPS 等等，只是代表了一种访问控制协议，urlopen一般接受三个参数，它的参数如下： </p>
+<pre><code class="python">urlopen(url, data, timeout)</code></pre>
+<p>第一个参数url即为URL，第二个参数data是访问URL时要传送的数据，第三个timeout是设置超时时间。</p>
+<p>第二三个参数是可以不传送的，data默认为空None，timeout默认为 socket._GLOBAL_DEFAULT_TIMEOUT</p>
+<p>第一个参数URL是必须要传送的，在这个例子里面我们传送了百度的URL，执行urlopen方法之后，返回一个response对象，返回信息便保存在这里面。</p>
+<pre><code class="python">print response.read()</code></pre>
+<p>response对象有一个read方法，可以返回获取到的网页内容。</p>
+<p>如果不加read直接打印会是什么？答案如下：</p>
+<pre><code class="python">&lt;addinfourl at 139728495260376 whose fp = &lt;socket._fileobject object at 0x7f1513fb3ad0&gt;&gt;</code></pre>
+<p> 直接打印出了该对象的描述，所以记得一定要加read方法，否则它不出来内容可就不怪我咯！ </p>
+<h2 id="3-构造Request"><a href="#3-构造Request" class="headerlink" title="3.构造Request"></a>3.构造Request</h2><p> 其实上面的urlopen参数可以传入一个request请求,它其实就是一个Request类的实例，构造时需要传入Url,Data等等的内容。比如上面的两行代码，我们可以这么改写 </p>
+<pre><code class="python">import urllib2
+
+request = urllib2.Request(&quot;http://www.baidu.com&quot;)
+response = urllib2.urlopen(request)
+print response.read()</code></pre>
+<p> 运行结果是完全一样的，只不过中间多了一个request对象，推荐大家这么写，因为在构建请求时还需要加入好多内容，通过构建一个request，服务器响应请求得到应答，这样显得逻辑上清晰明确。 </p>
+<h2 id="4-POST和GET数据传送"><a href="#4-POST和GET数据传送" class="headerlink" title="4.POST和GET数据传送"></a>4.POST和GET数据传送</h2><p>上面的程序演示了最基本的网页抓取，不过，现在大多数网站都是动态网页，需要你动态地传递参数给它，它做出对应的响应。所以，在访问时，我们需要传递数据给它。最常见的情况是什么？对了，就是登录注册的时候呀。</p>
+<p>把数据用户名和密码传送到一个URL，然后你得到服务器处理之后的响应，这个该怎么办？下面让我来为小伙伴们揭晓吧！</p>
+<p>数据传送分为POST和GET两种方式，两种方式有什么区别呢？</p>
+<p>最重要的区别是GET方式是直接以链接形式访问，链接中包含了所有的参数，当然如果包含了密码的话是一种不安全的选择，不过你可以直观地看到自己提交了什么内容。POST则不会在网址上显示所有的参数，不过如果你想直接查看提交了什么就不太方便了，大家可以酌情选择。</p>
+<h3 id="POST方式："><a href="#POST方式：" class="headerlink" title="POST方式："></a>POST方式：</h3><p>上面我们说了data参数是干嘛的？对了，它就是用在这里的，我们传送的数据就是这个参数data，下面演示一下POST方式。</p>
+<pre><code class="python">import urllib
+import urllib2
+
+values = {&quot;username&quot;:&quot;1016903103@qq.com&quot;,&quot;password&quot;:&quot;XXXX&quot;}
+data = urllib.urlencode(values) 
+url = &quot;https://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn&quot;
+request = urllib2.Request(url,data)
+response = urllib2.urlopen(request)
+print response.read()</code></pre>
+<p>我们引入了urllib库，现在我们模拟登陆CSDN，当然上述代码可能登陆不进去，因为CSDN还有个流水号的字段，没有设置全，比较复杂在这里就不写上去了，在此只是说明登录的原理。一般的登录网站一般是这种写法。</p>
+<p>我们需要定义一个字典，名字为values，参数我设置了username和password，下面利用urllib的urlencode方法将字典编码，命名为data，构建request时传入两个参数，url和data，运行程序，返回的便是POST后呈现的页面内容。</p>
+<p>注意上面字典的定义方式还有一种，下面的写法是等价的</p>
+<pre><code class="python">import urllib
+import urllib2
+
+values = {}
+values[&#39;username&#39;] = &quot;1016903103@qq.com&quot;
+values[&#39;password&#39;] = &quot;XXXX&quot;
+data = urllib.urlencode(values) 
+url = &quot;http://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn&quot;
+request = urllib2.Request(url,data)
+response = urllib2.urlopen(request)
+print response.read()</code></pre>
+<p> 以上方法便实现了POST方式的传送 </p>
+<h3 id="GET方式："><a href="#GET方式：" class="headerlink" title="GET方式："></a>GET方式：</h3><p>至于GET方式我们可以直接把参数写到网址上面，直接构建一个带参数的URL出来即可。</p>
+<pre><code class="python">import urllib
+import urllib2
+
+values={}
+values[&#39;username&#39;] = &quot;1016903103@qq.com&quot;
+values[&#39;password&#39;]=&quot;XXXX&quot;
+data = urllib.urlencode(values) 
+url = &quot;http://passport.csdn.net/account/login&quot;
+geturl = url + &quot;?&quot;+data
+request = urllib2.Request(geturl)
+response = urllib2.urlopen(request)
+print response.read()</code></pre>
+<p> 你可以print geturl，打印输出一下url，发现其实就是原来的url加？然后加编码后的参数 </p>
+<pre><code class="python">http://passport.csdn.net/account/login?username=1016903103%40qq.com&amp;password=XXXX</code></pre>
+<p>和我们平常GET访问方式一模一样，这样就实现了数据的GET方式传送。</p>
+<p>本节讲解了一些基本使用，可以抓取到一些基本的网页信息，小伙伴们加油！</p>
+<p> 转载：<a href="https://cuiqingcai.com/" target="_blank" rel="noopener">静觅</a> » <a href="https://cuiqingcai.com/947.html" target="_blank" rel="noopener">Python爬虫入门三之Urllib库的基本使用</a> </p>
 
             </div>
             <hr/>
@@ -456,7 +539,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mossloo.cn/posts/3eeb.html">https://mossloo.cn/posts/3eeb.html</a>
+                    <a href="https://mossloo.cn/posts/tnad.html">https://mossloo.cn/posts/tnad.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -493,7 +576,15 @@ if (windowWidth > 768) {
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">爬虫</span>
+                                </a>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -922,9 +1013,64 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/tnad.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="python爬虫入门之Urllib库的基本使用">
+                        
+                        <span class="card-title">python爬虫入门之Urllib库的基本使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1.如何爬取网页？怎样扒网页呢？其实就是根据URL来获取它的网页信息，虽然我们在浏览器中看到的是一幅幅优美的画面，但是其实是由浏览器解释才呈现出来的，实质它是一段HTML代码，加 JS、CSS，如果把网页比作一个人，那么HTML便是他的骨架
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                    爬虫
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/posts/3ee1.html">
                     <div class="card-image">
@@ -943,9 +1089,9 @@ if (windowWidth > 768) {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -970,44 +1116,6 @@ if (windowWidth > 768) {
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/3eeb.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-10
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            无邪
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>
