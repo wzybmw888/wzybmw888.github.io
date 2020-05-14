@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="[Python3网络爬虫开发实战] 1.3.1-lxml的安装, 经济学，学习，专注web等">
+    <meta name="keywords" content="[Python3网络爬虫开发实战] 1.3.2-Beautiful Soup的安装, 经济学，学习，专注web等">
     <meta name="description" content="一个较真的理工男，专注于前端设计，经济分析，机械设计等专业！共享学习资料，与您一起前进！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[Python3网络爬虫开发实战] 1.3.1-lxml的安装 | Mossloo博客</title>
+    <title>[Python3网络爬虫开发实战] 1.3.2-Beautiful Soup的安装 | Mossloo博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[Python3网络爬虫开发实战] 1.3.1-lxml的安装</h1>
+                    <h1 class="description center-align post-title">[Python3网络爬虫开发实战] 1.3.2-Beautiful Soup的安装</h1>
                 </div>
             </div>
         </div>
@@ -417,14 +417,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    625
+                    429
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -439,33 +439,24 @@ if (windowWidth > 768) {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>lxml是Python的一个解析库，支持HTML和XML的解析，支持XPath解析方式，而且解析效率非常高。本节中，我们了解一下lxml的安装方式，这主要从Windows、Linux和Mac三大平台来介绍。</p>
+                <p>Beautiful Soup是Python的一个HTML或XML的解析库，我们可以用它来方便地从网页中提取数据。它拥有强大的API和多样的解析方式，本节就来了解下它的安装方式。</p>
 <h2 id="1-相关链接"><a href="#1-相关链接" class="headerlink" title="1. 相关链接"></a>1. 相关链接</h2><ul>
-<li>官方网站：<a href="http://lxml.de/" target="_blank" rel="noopener">http://lxml.de</a></li>
-<li>GitHub：<a href="https://github.com/lxml/lxml" target="_blank" rel="noopener">https://github.com/lxml/lxml</a></li>
-<li>PyPI：<a href="https://pypi.python.org/pypi/lxml" target="_blank" rel="noopener">https://pypi.python.org/pypi/lxml</a></li>
+<li>官方文档：<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc" target="_blank" rel="noopener">https://www.crummy.com/software/BeautifulSoup/bs4/doc</a></li>
+<li>中文文档：<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh" target="_blank" rel="noopener">https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh</a></li>
+<li>PyPI：<a href="https://pypi.python.org/pypi/beautifulsoup4" target="_blank" rel="noopener">https://pypi.python.org/pypi/beautifulsoup4</a></li>
 </ul>
-<h2 id="2-Windows下的安装"><a href="#2-Windows下的安装" class="headerlink" title="2. Windows下的安装"></a>2. Windows下的安装</h2><p>在Windows下，可以先尝试利用pip安装，此时直接执行如下命令即可：</p>
-<pre><code>pip3 install lxml</code></pre><p>如果没有任何报错，则证明安装成功。</p>
-<p>如果出现报错，比如提示缺少libxml2库等信息，可以采用wheel方式安装。</p>
-<p>推荐直接到这里（链接为：<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml）下载对应的wheel文件，找到本地安装Python版本和系统对应的lxml版本，例如Windows" target="_blank" rel="noopener">http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml）下载对应的wheel文件，找到本地安装Python版本和系统对应的lxml版本，例如Windows</a> 64位、Python 3.6，就选择lxml‑3.8.0‑cp36‑cp36m‑win_amd64.whl，将其下载到本地。</p>
-<p>然后利用pip安装即可，命令如下：</p>
-<pre><code>pip3 install lxml‑3.8.0‑cp36‑cp36m‑win_amd64.whl</code></pre><p> 这样我们就可以成功安装lxml了。 </p>
-<h2 id="3-Linux下的安装"><a href="#3-Linux下的安装" class="headerlink" title="3. Linux下的安装"></a>3. Linux下的安装</h2><p>在Linux平台下安装问题不大，同样可以先尝试pip安装，命令如下：</p>
-<pre><code>pip3 install lxml</code></pre><p> 如果报错，可以尝试下面的解决方案。</p>
-<h3 id="CentOS、Red-Hat"><a href="#CentOS、Red-Hat" class="headerlink" title="CentOS、Red Hat"></a>CentOS、Red Hat</h3><p>对于此类系统，报错主要是因为缺少必要的库。</p>
-<p>执行如下命令安装所需的库即可：</p>
-<pre><code>sudo yum groupinstall -y development tools
-sudo yum install -y epel-release libxslt-devel libxml2-devel openssl-devel</code></pre><p>主要是libxslt-devel和libxml2-devel这两个库，lxml依赖它们。安装好之后，重新尝试pip安装即可。</p>
-<h3 id="Ubuntu、Debian和Deepin"><a href="#Ubuntu、Debian和Deepin" class="headerlink" title="Ubuntu、Debian和Deepin"></a>Ubuntu、Debian和Deepin</h3><p>在这些系统下，报错的原因同样可能是缺少了必要的类库，执行如下命令安装：</p>
-<pre><code>sudo apt-get install -y python3-dev build-essential libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev zlib1g-dev</code></pre><p> 安装好之后，重新尝试pip安装即可。  安装好之后，重新尝试pip安装即可。 </p>
-<h2 id="4-Mac下的安装"><a href="#4-Mac下的安装" class="headerlink" title="4. Mac下的安装"></a>4. Mac下的安装</h2><p>在Mac平台下，仍然可以首先尝试pip安装，命令如下：</p>
-<pre><code>pip3 install lxml</code></pre><p> 如果产生错误，可以执行如下命令将必要的类库安装： </p>
-<pre><code>xcode-select --install</code></pre><p>之后再重新尝试pip安装，就没有问题了。</p>
-<p>lxml是一个非常重要的库，后面的Beautiful Soup、Scrapy框架都需要用到此库，所以请一定安装成功。</p>
-<h2 id="5-验证安装"><a href="#5-验证安装" class="headerlink" title="5. 验证安装"></a>5. 验证安装</h2><p>安装完成之后，可以在Python命令行下测试：</p>
-<pre><code>$ python3
-&gt;&gt;&gt; import lxml</code></pre><p> 如果没有错误报出，则证明库已经安装好了。 </p>
+<h2 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2. 准备工作"></a>2. 准备工作</h2><p>Beautiful Soup的HTML和XML解析器是依赖于lxml库的，所以在此之前请确保已经成功安装好了lxml库，具体的安装方式参见上节。</p>
+<h2 id="3-pip安装"><a href="#3-pip安装" class="headerlink" title="3. pip安装"></a>3. pip安装</h2><p>目前，Beautiful Soup的最新版本是4.x版本，之前的版本已经停止开发了。这里推荐使用pip来安装，安装命令如下：</p>
+<pre><code>pip3 install beautifulsoup4</code></pre><p>命令执行完毕之后即可完成安装。</p>
+<h2 id="4-wheel安装"><a href="#4-wheel安装" class="headerlink" title="4. wheel安装"></a>4. wheel安装</h2><p>当然，我们也可以从PyPI下载wheel文件安装，链接如下：<a href="https://pypi.python.org/pypi/beautifulsoup4" target="_blank" rel="noopener">https://pypi.python.org/pypi/beautifulsoup4</a></p>
+<p>然后使用pip安装wheel文件即可。</p>
+<h2 id="5-验证安装"><a href="#5-验证安装" class="headerlink" title="5. 验证安装"></a>5. 验证安装</h2><p>安装完成之后，可以运行下面的代码验证一下：</p>
+<pre><code>from bs4 import BeautifulSoup
+soup = BeautifulSoup(&#39;&lt;p&gt;Hello&lt;/p&gt;&#39;, &#39;lxml&#39;)
+print(soup.p.string)</code></pre><p>运行结果如下：</p>
+<pre><code>Hello</code></pre><p>如果运行结果一致，则证明安装成功。</p>
+<p>注意，这里我们虽然安装的是beautifulsoup4这个包，但是在引入的时候却是bs4。这是因为这个包源代码本身的库文件夹名称就是bs4，所以安装完成之后，这个库文件夹就被移入到本机Python3的lib库里，所以识别到的库文件名就叫作bs4。</p>
+<p>因此，包本身的名称和我们使用时导入的包的名称并不一定是一致的。 </p>
 
             </div>
             <hr/>
@@ -491,7 +482,7 @@ sudo yum install -y epel-release libxslt-devel libxml2-devel openssl-devel</code
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mossloo.cn/posts/adcz.html">https://mossloo.cn/posts/adcz.html</a>
+                    <a href="https://mossloo.cn/posts/131da.html">https://mossloo.cn/posts/131da.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -969,21 +960,21 @@ sudo yum install -y epel-release libxslt-devel libxml2-devel openssl-devel</code
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/131da.html">
+                <a href="/posts/null.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 1.3.2-Beautiful Soup的安装">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 1.3.3-pyquery的安装">
                         
-                        <span class="card-title">[Python3网络爬虫开发实战] 1.3.2-Beautiful Soup的安装</span>
+                        <span class="card-title">[Python3网络爬虫开发实战] 1.3.3-pyquery的安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Beautiful Soup是Python的一个HTML或XML的解析库，我们可以用它来方便地从网页中提取数据。它拥有强大的API和多样的解析方式，本节就来了解下它的安装方式。
+                            pyquery同样是一个强大的网页解析工具，它提供了和jQuery类似的语法来解析HTML文档，支持CSS选择器，使用非常方便。本节中，我们就来了解一下它的安装方式。
 1. 相关链接
-官方文档：https://www.crummy
+GitHub：https://github.com/ga
                         
                     </div>
                     <div class="publish-info">
@@ -1024,19 +1015,21 @@ sudo yum install -y epel-release libxslt-devel libxml2-devel openssl-devel</code
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/null.html">
+                <a href="/posts/adcz.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 1.3-解析库的安装">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 1.3.1-lxml的安装">
                         
-                        <span class="card-title">[Python3网络爬虫开发实战] 1.3-解析库的安装</span>
+                        <span class="card-title">[Python3网络爬虫开发实战] 1.3.1-lxml的安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            抓取网页代码之后，下一步就是从网页中提取信息。提取信息的方式有多种多样，可以使用正则来提取，但是写起来相对比较烦琐。这里还有许多强大的解析库，如lxml、Beautiful Soup、pyquery等。此外，还提供了非常强大的解析方法，如X
+                            lxml是Python的一个解析库，支持HTML和XML的解析，支持XPath解析方式，而且解析效率非常高。本节中，我们了解一下lxml的安装方式，这主要从Windows、Linux和Mac三大平台来介绍。
+1. 相关链接
+官方网站：htt
                         
                     </div>
                     <div class="publish-info">
