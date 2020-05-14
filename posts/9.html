@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="[Python3网络爬虫开发实战]1.2.3-ChromeDriver的安装, 经济学，学习，专注web等">
+    <meta name="keywords" content="[Python3网络爬虫开发实战] 1.7.1-Charles的安装, 经济学，学习，专注web等">
     <meta name="description" content="一个较真的理工男，专注于前端设计，经济分析，机械设计等专业！共享学习资料，与您一起前进！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[Python3网络爬虫开发实战]1.2.3-ChromeDriver的安装 | Mossloo博客</title>
+    <title>[Python3网络爬虫开发实战] 1.7.1-Charles的安装 | Mossloo博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://wzy-1302043975.cos.ap-shanghai.myqcloud.com/img/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[Python3网络爬虫开发实战]1.2.3-ChromeDriver的安装</h1>
+                    <h1 class="description center-align post-title">[Python3网络爬虫开发实战] 1.7.1-Charles的安装</h1>
                 </div>
             </div>
         </div>
@@ -403,28 +403,28 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-12
+                    2020-05-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-12
+                    2020-05-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    895
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -439,43 +439,73 @@ if (windowWidth > 768) {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>前面我们成功安装好了Selenium库，但是它是一个自动化测试工具，需要浏览器来配合使用，本节中我们就介绍一下Chrome浏览器及ChromeDriver驱动的配置。</p>
-<p>首先，下载Chrome浏览器，方法有很多，在此不再赘述。</p>
-<p>随后安装ChromeDriver。因为只有安装ChromeDriver，才能驱动Chrome浏览器完成相应的操作。下面我们来介绍下怎样安装ChromeDriver。</p>
+                <p>Charles是一个网络抓包工具，相比Fiddler，其功能更为强大，而且跨平台支持得更好，所以这里选用它来作为主要的移动端抓包工具。</p>
 <h2 id="1-相关链接"><a href="#1-相关链接" class="headerlink" title="1. 相关链接"></a>1. 相关链接</h2><ul>
-<li>官方网站：<a href="https://sites.google.com/a/chromium.org/chromedriver" target="_blank" rel="noopener">https://sites.google.com/a/chromium.org/chromedriver</a></li>
-<li>下载地址：<a href="https://chromedriver.storage.googleapis.com/index.html" target="_blank" rel="noopener">https://chromedriver.storage.googleapis.com/index.html</a></li>
+<li>官方网站：<a href="https://www.charlesproxy.com/" target="_blank" rel="noopener">https://www.charlesproxy.com</a></li>
+<li>下载链接：<a href="https://www.charlesproxy.com/download" target="_blank" rel="noopener">https://www.charlesproxy.com/download</a></li>
 </ul>
-<h2 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2. 准备工作"></a>2. 准备工作</h2><p>在这之前请确保已经正确安装好了Chrome浏览器并可以正常运行，安装过程不再赘述。</p>
-<h2 id="3-查看版本"><a href="#3-查看版本" class="headerlink" title="3. 查看版本"></a>3. 查看版本</h2><p>点击Chrome菜单“帮助”→“关于Google Chrome”，即可查看Chrome的版本号，如图1-14所示。</p>
-<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-14.jpg" alt="img"> </p>
-<p>这里我的Chrome版本是58.0。</p>
-<p>请记住Chrome版本号，因为选择ChromeDriver版本时需要用到。</p>
-<h2 id="4-下载ChromeDriver"><a href="#4-下载ChromeDriver" class="headerlink" title="4. 下载ChromeDriver"></a>4. 下载ChromeDriver</h2><p> 打开ChromeDriver的官方网站，可以看到最新版本为2.31，其支持的Chrome浏览器版本为58~60，官网页面如图1-15所示。 </p>
-<blockquote>
-<p> 更新：现在 2020 年，Chrome 版本已经更新到 80+，请以最新的 ChromeDriver 为准！<a href="https://chromedriver.chromium.org/downloads" target="_blank" rel="noopener">https://chromedriver.chromium.org/downloads</a> </p>
-</blockquote>
-<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-15.jpg" alt="img"> </p>
-<p>如果你的Chrome版本号是58~60，那么可以选择此版本下载。</p>
-<p>如果你的Chrome版本号不在此范围，可以继续查看之前的ChromeDriver版本。每个版本都有相应的支持Chrome版本的介绍，请找好自己的Chrome浏览器版本对应的ChromeDriver版本再下载，否则可能无法正常工作。</p>
-<p>找好对应的版本号后，随后到ChromeDriver镜像站下载对应的安装包即可：<a href="https://chromedriver.storage.googleapis.com/index.html。在不同平台下，可以下载不同的安装包。" target="_blank" rel="noopener">https://chromedriver.storage.googleapis.com/index.html。在不同平台下，可以下载不同的安装包。</a></p>
-<h2 id="5-环境变量配置"><a href="#5-环境变量配置" class="headerlink" title="5. 环境变量配置"></a>5. 环境变量配置</h2><p>下载完成后，将ChromeDriver的可执行文件配置到环境变量下。</p>
-<p>在Windows下，建议直接将chromedriver.exe文件拖到Python的Scripts目录下，如图1-16所示。</p>
-<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-16.jpg" alt="img"> </p>
-<p>此外，也可以单独将其所在路径配置到环境变量，具体的配置方法请参见1.1节。</p>
-<p>在Linux和Mac下，需要将可执行文件配置到环境变量或将文件移动到属于环境变量的目录里。</p>
-<p>例如，要移动文件到/usr/bin目录。首先，需要在命令行模式下进入其所在路径，然后将其移动到/usr/bin：</p>
-<pre><code>sudo mv chromedriver /usr/bin</code></pre><p> 当然，也可以将ChromeDriver配置到$PATH。首先，可以将可执行文件放到某一目录，目录可以任意选择，例如将当前可执行文件放在/usr/local/chromedriver目录下，接下来可以修改~/.profile文件，相关命令如下： </p>
-<pre><code>export PATH=&quot;$PATH:/usr/local/chromedriver&quot;</code></pre><p> 保存后执行如下命令： </p>
-<pre><code>source ~/.profile</code></pre><p> 即可完成环境变量的添加。 </p>
-<h2 id="6-验证安装"><a href="#6-验证安装" class="headerlink" title="6. 验证安装"></a>6. 验证安装</h2><p>配置完成后，就可以在命令行下直接执行<code>chromedriver</code>命令了：</p>
-<pre><code>chromedriver</code></pre><p> 如果输入控制台有类似图1-17所示的输出，则证明ChromeDriver的环境变量配置好了。 </p>
-<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-17.jpg" alt="img"> </p>
-<p> 随后再在程序中测试，执行如下Python代码： </p>
-<pre><code>from selenium import webdriver
-browser = webdriver.Chrome()</code></pre><p>运行之后，如果弹出一个空白的Chrome浏览器，则证明所有的配置都没有问题。如果没有弹出，请检查之前的每一步配置。</p>
-<p>如果弹出后闪退，则可能是ChromeDriver版本和Chrome版本不兼容，请更换ChromeDriver版本。</p>
-<p>如果没有问题，接下来就可以利用Chrome来做网页抓取了。</p>
+<h2 id="2-下载Charles"><a href="#2-下载Charles" class="headerlink" title="2. 下载Charles"></a>2. 下载Charles</h2><p>我们可以在官网下载最新的稳定版本，如图1-43所示。可以发现，它支持Windows、Linux和Mac三大平台。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-43.jpg" alt="img"> </p>
+<p>直接点击对应的安装包下载即可，具体的安装过程这里不再赘述。</p>
+<p>Charles是收费软件，不过可以免费试用30天。如果试用期过了，其实还可以试用，不过每次试用不能超过30分钟，启动有10秒的延时，但是完整的软件功能还是可以使用的，所以还算比较友好。</p>
+<h2 id="3-证书配置"><a href="#3-证书配置" class="headerlink" title="3. 证书配置"></a>3. 证书配置</h2><p>现在很多页面都在向HTTPS方向发展，HTTPS通信协议应用得越来越广泛。如果一个App通信应用了HTTPS协议，那么它通信的数据都会是被加密的，常规的截包方法是无法识别请求内部的数据的。</p>
+<p>安装完成后，如果我们想要做HTTPS抓包的话，那么还需要配置一下相关SSL证书。接下来，我们再看看各个平台下的证书配置过程。</p>
+<p>Charles是运行在PC端的，我们要抓取的是App端的数据，所以要在PC和手机端都安装证书。</p>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>如果你的PC是Windows系统，可以按照下面的操作进行证书配置。</p>
+<p>首先打开Charles，点击Help→SSL Proxying→Install Charles Root Certificate，即可进入证书的安装页面，如图1-44所示。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-44.jpg" alt="img"> </p>
+<p> 接下来，会弹出一个安装证书的页面，如图1-45 所示。 </p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-45.jpg" alt="img"> </p>
+<p> 点击“安装证书”按钮，就会打开证书导入向导，如图1-46所示。 </p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-46.jpg" alt="img"> </p>
+<p> 图1-46 证书导入向导 </p>
+<p>直接点击“下一步”按钮，此时需要选择证书的存储区域，点击第二个选项“将所有的证书放入下列存储”，然后点击“浏览”按钮，从中选择证书存储位置为“受信任的根证书颁发机构”，再点击“确定”按钮，然后点击“下一步”按钮，如图1-47所示。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-47.jpg" alt="img"> </p>
+<p>图1-47 选择证书存储区域</p>
+<p>再继续点击“下一步”按钮完成导入。</p>
+<h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><p>如果你的PC是Mac系统，可以按照下面的操作进行证书配置。</p>
+<p>同样是点击Help→SSL Proxying→Install Charles Root Certificate，即可进入证书的安装页面。</p>
+<p>接下来，找到Charles的证书并双击，将“信任”设置为“始终信任”即可，如图1-48所示。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-48.jpg" alt="img"> </p>
+<p>图1-48 证书配置</p>
+<p>这样就成功安装了证书。</p>
+<h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><p>如果你的手机是iOS系统，可以按照下面的操作进行证书配置。</p>
+<p>首先，查看电脑的Charles代理是否开启，具体操作是点击Proxy→Proxy Settings，打开代理设置页面，确保当前的HTTP代理是开启的，如图1-49所示。这里的代理端口为8888，也可以自行修改。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-49.png" alt="img"> </p>
+<p>图1-49 代理设置</p>
+<p>接下来，将手机和电脑连在同一个局域网下。例如，当前电脑的IP为192.168.1.76，那么首先设置手机的代理为192.168.1.76:8888，如图1-50所示。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-50.jpg" alt="img"> </p>
+<p>图1-50 代理设置</p>
+<p>设置完毕后，电脑上会出现一个提示窗口，询问是否信任此设备，如图1-51所示。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-51.png" alt="img"> </p>
+<p>图1-51 提示窗口</p>
+<p>此时点击Allow按钮即可。这样手机就和PC连在同一个局域网内了，而且设置了Charles的代理，即Charles可以抓取到流经App的数据包了。</p>
+<p>接下来，再安装Charles的HTTPS证书。</p>
+<p>在电脑上打开Help→SSL Proxying→Install Charles Root Certificate on a Mobile Device or Remote Browser，如图1-52所示。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-52.jpg" alt="img"> </p>
+<p>图1-52 证书安装页面入口</p>
+<p>此时会看到如图1-53所示的提示。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-53.png" alt="img"> </p>
+<p>图1-53 提示窗口</p>
+<p>它提示我们在手机上设置好Charles的代理（刚才已经设置好了），然后在手机浏览器中打开chls.pro/ssl下载证书。</p>
+<p>在手机上打开chls.pro/ssl后，便会弹出证书的安装页面，如图1-54所示：</p>
+<p> ![图1-54 证书安装页面</p>
+<p>点击“安装”按钮，然后输入密码即可完成安装，如图1-55所示。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-55.jpg" alt="img"> </p>
+<p>图1-55 安装成功页面</p>
+<p>如果你的iOS版本是10.3以下的话，信任CA证书的流程就已经完成了。</p>
+<p>如果你的iOS版本是10.3及以上，还需要在“设置”→“通用”→“关于本机”→“证书信任设置”中将证书的完全信任开关打开，如图1-56所示。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-56.jpg" alt="img"> </p>
+<p>图1-56 证书信任设置</p>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p>如果你的手机是Android系统，可以按照下面的操作进行证书配置。</p>
+<p>在Android系统中，同样需要设置代理为Charles的代理，如图1-57所示</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-57.jpg" alt="img"> </p>
+<p>图1-57 代理设置</p>
+<p>设置完毕后，电脑上就会出现一个提示窗口，询问是否信任此设备，如图1-51所示，此时直接点击Allow按钮即可。</p>
+<p>接下来，像iOS设备那样，在手机浏览器上打开chls.pro/ssl，这时会出现一个提示框，如图1-58所示。</p>
+<p> <img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/1-58.png" alt="img"> </p>
+<p>图1-58 证书安装页面</p>
+<p>我们为证书添加一个名称，然后点击“确定”按钮即可完成证书的安装。</p>
 
             </div>
             <hr/>
@@ -501,7 +531,7 @@ browser = webdriver.Chrome()</code></pre><p>运行之后，如果弹出一个空
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mossloo.cn/posts/null.html">https://mossloo.cn/posts/null.html</a>
+                    <a href="https://mossloo.cn/posts/9.html">https://mossloo.cn/posts/9.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -979,19 +1009,20 @@ browser = webdriver.Chrome()</code></pre><p>运行之后，如果弹出一个空
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/10001.html">
+                <a href="/posts/10.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 1.3-解析库的安装">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 1.7.2-mitmproxy的安装">
                         
-                        <span class="card-title">[Python3网络爬虫开发实战] 1.3-解析库的安装</span>
+                        <span class="card-title">[Python3网络爬虫开发实战] 1.7.2-mitmproxy的安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            抓取网页代码之后，下一步就是从网页中提取信息。提取信息的方式有多种多样，可以使用正则来提取，但是写起来相对比较烦琐。这里还有许多强大的解析库，如lxml、Beautiful Soup、pyquery等。此外，还提供了非常强大的解析方法，如X
+                            mitmproxy是一个支持HTTP和HTTPS的抓包程序，类似Fiddler、Charles的功能，只不过它通过控制台的形式操作。
+此外，mitmproxy还有两个关联组件，一个是mitmdump，它是mitmproxy的命令行接口，利用
                         
                     </div>
                     <div class="publish-info">
@@ -1032,25 +1063,25 @@ browser = webdriver.Chrome()</code></pre><p>运行之后，如果弹出一个空
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/41.html">
+                <a href="/posts/12.html">
                     <div class="card-image">
                         
-                        <img src="https://wzy-1302043975.cos.ap-shanghai.myqcloud.com/img/2.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战]1.2.2-Selenium的安装">
                         
-                        <span class="card-title">[Python3网络爬虫开发实战]1.2.2-Selenium的安装</span>
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 1.7-App爬取相关库的安装">
+                        
+                        <span class="card-title">[Python3网络爬虫开发实战] 1.7-App爬取相关库的安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Selenium是一个自动化测试工具，利用它我们可以驱动浏览器执行特定的动作，如点击、下拉等操作。对于一些JavaScript渲染的页面来说，这种抓取方式非常有效。下面我们来看看Selenium的安装过程。
-1. 相关链接
-官方网站：htt
+                            除了Web网页，爬虫也可以抓取App的数据。App中的页面要加载出来，首先需要获取数据，而这些数据一般是通过请求服务器的接口来获取的。由于App没有浏览器这种可以比较直观地看到后台请求的工具，所以主要用一些抓包技术来抓取数据。
+本书介绍的抓
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
                             </span>
                         <span class="publish-author">
                             
