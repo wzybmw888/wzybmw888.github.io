@@ -1,0 +1,1862 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="[Python3网络爬虫开发实战] 2.2-网页基础, 经济学，学习，专注web等">
+    <meta name="description" content="一个较真的理工男，专注于前端设计，经济分析，机械设计等专业！共享学习资料，与您一起前进！">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>[Python3网络爬虫开发实战] 2.2-网页基础 | Mossloo博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Mossloo博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-images" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Mossloo博客</div>
+        <div class="logo-desc">
+            
+            一个较真的理工男，专注于前端设计，经济分析，机械设计等专业！共享学习资料，与您一起前进！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-images"></i>
+			
+			相册
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">[Python3网络爬虫开发实战] 2.2-网页基础</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">爬虫</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-05-14
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-05-14
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    12 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>用浏览器访问网站时，页面各不相同，你有没有想过它为何会呈现这个样子呢？本节中，我们就来了解一下网页的基本组成、结构和节点等内容。</p>
+<h2 id="1-网页的组成"><a href="#1-网页的组成" class="headerlink" title="1. 网页的组成"></a>1. 网页的组成</h2><p>网页可以分为三大部分——HTML、CSS和JavaScript。如果把网页比作一个人的话，HTML相当于骨架，JavaScript相当于肌肉，CSS相当于皮肤，三者结合起来才能形成一个完善的网页。下面我们分别来介绍一下这三部分的功能。</p>
+<h3 id="1-HTML"><a href="#1-HTML" class="headerlink" title="(1) HTML"></a>(1) HTML</h3><p>HTML是用来描述网页的一种语言，其全称叫作Hyper Text Markup Language，即超文本标记语言。网页包括文字、按钮、图片和视频等各种复杂的元素，其基础架构就是HTML。不同类型的文字通过不同类型的标签来表示，如图片用<code>img</code>标签表示，视频用<code>video</code>标签表示，段落用<code>p</code>标签表示，它们之间的布局又常通过布局标签<code>div</code>嵌套组合而成，各种标签通过不同的排列和嵌套才形成了网页的框架。</p>
+<p>在Chrome浏览器中打开百度，右击并选择“检查”项（或按F12键），打开开发者模式，这时在Elements选项卡中即可看到网页的源代码，如图2-9所示。</p>
+<p><img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/2-10.png" alt="img">图2-9 源代码</p>
+<p>这就是HTML，整个网页就是由各种标签嵌套组合而成的。这些标签定义的节点元素相互嵌套和组合形成了复杂的层次关系，就形成了网页的架构。</p>
+<h3 id="2-CSS"><a href="#2-CSS" class="headerlink" title="(2) CSS"></a>(2) CSS</h3><p>HTML定义了网页的结构，但是只有HTML页面的布局并不美观，可能只是简单的节点元素的排列，为了让网页看起来更好看一些，这里借助了CSS。</p>
+<p>CSS，全称叫作Cascading Style Sheets，即层叠样式表。“层叠”是指当在HTML中引用了数个样式文件，并且样式发生冲突时，浏览器能依据层叠顺序处理。“样式”指网页中文字大小、颜色、元素间距、排列等格式。</p>
+<p>CSS是目前唯一的网页页面排版样式标准，有了它的帮助，页面才会变得更为美观。</p>
+<p>图2-9的右侧即为CSS，例如：</p>
+<pre><code class="css">#head_wrapper.s-ps-islite .s-p-top {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    height: 181px;
+}</code></pre>
+<p>就是一个CSS样式。大括号前面是一个CSS选择器，此选择器的意思是首先选中<code>id</code>为<code>head_wrapper</code>且<code>class</code>为<code>s-ps-islite</code>的节点，然后再选中其内部的<code>class</code>为<code>s-p-top</code>的节点。大括号内部写的就是一条条样式规则，例如<code>position</code>指定了这个元素的布局方式为绝对布局，<code>bottom</code>指定元素的下边距为40像素，<code>width</code>指定了宽度为100%占满父元素，<code>height</code>则指定了元素的高度。也就是说，我们将位置、宽度、高度等样式配置统一写成这样的形式，然后用大括号括起来，接着在开头再加上CSS选择器，这就代表这个样式对CSS选择器选中的元素生效，元素就会根据此样式来展示了。</p>
+<p>在网页中，一般会统一定义整个网页的样式规则，并写入CSS文件中（其后缀为css）。在HTML中，只需要用<code>link</code>标签即可引入写好的CSS文件，这样整个页面就会变得美观、优雅。</p>
+<h3 id="3-JavaScript"><a href="#3-JavaScript" class="headerlink" title="(3) JavaScript"></a>(3) JavaScript</h3><p>JavaScript，简称JS，是一种脚本语言。HTML和CSS配合使用，提供给用户的只是一种静态信息，缺乏交互性。我们在网页里可能会看到一些交互和动画效果，如下载进度条、提示框、轮播图等，这通常就是JavaScript的功劳。它的出现使得用户与信息之间不只是一种浏览与显示的关系，而是实现了一种实时、动态、交互的页面功能。</p>
+<p>JavaScript通常也是以单独的文件形式加载的，后缀为js，在HTML中通过<code>script</code>标签即可引入，例如：</p>
+<pre><code>&lt;script src=&quot;jquery-2.1.0.js&quot;&gt;&lt;/script&gt;</code></pre><p>综上所述，HTML定义了网页的内容和结构，CSS描述了网页的布局，JavaScript定义了网页的行为。</p>
+<h2 id="2-网页的结构"><a href="#2-网页的结构" class="headerlink" title="2. 网页的结构"></a>2. 网页的结构</h2><p>我们首先用例子来感受一下HTML的基本结构。新建一个文本文件，名称可以自取，后缀为html，内容如下：</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;This is a Demo&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;container&quot;&gt;
+            &lt;div class=&quot;wrapper&quot;&gt;
+                &lt;h2 class=&quot;title&quot;&gt;Hello World&lt;/h2&gt;
+                &lt;p class=&quot;text&quot;&gt;Hello, this is a paragraph.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>这就是一个最简单的HTML实例。开头用<code>DOCTYPE</code>定义了文档类型，其次最外层是<code>html</code>标签，最后还有对应的结束标签来表示闭合，其内部是<code>head</code>标签和<code>body</code>标签，分别代表网页头和网页体，它们也需要结束标签。<code>head</code>标签内定义了一些页面的配置和引用，如：</p>
+<pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre><p>它指定了网页的编码为UTF-8。</p>
+<p><code>title</code>标签则定义了网页的标题，会显示在网页的选项卡中，不会显示在正文中。<code>body</code>标签内则是在网页正文中显示的内容。<code>div</code>标签定义了网页中的区块，它的<code>id</code>是<code>container</code>，这是一个非常常用的属性，且<code>id</code>的内容在网页中是唯一的，我们可以通过它来获取这个区块。然后在此区块内又有一个<code>div</code>标签，它的<code>class</code>为<code>wrapper</code>，这也是一个非常常用的属性，经常与CSS配合使用来设定样式。然后此区块内部又有一个<code>h2</code>标签，这代表一个二级标题。另外，还有一个<code>p</code>标签，这代表一个段落。在这两者中直接写入相应的内容即可在网页中呈现出来，它们也有各自的<code>class</code>属性。</p>
+<p>将代码保存后，在浏览器中打开该文件，可以看到如图2-10所示的内容。</p>
+<p><img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/2-11.png" alt="img">图2-10 运行结果</p>
+<p>可以看到，在选项卡上显示了This is a Demo字样，这是我们在<code>head</code>中的<code>title</code>里定义的文字。而网页正文是<code>body</code>标签内部定义的各个元素生成的，可以看到这里显示了二级标题和段落。</p>
+<p>这个实例便是网页的一般结构。一个网页的标准形式是<code>html</code>标签内嵌套<code>head</code>和<code>body</code>标签，<code>head</code>内定义网页的配置和引用，<code>body</code>内定义网页的正文。</p>
+<h2 id="3-节点树及节点间的关系"><a href="#3-节点树及节点间的关系" class="headerlink" title="3. 节点树及节点间的关系"></a>3. 节点树及节点间的关系</h2><p>在HTML中，所有标签定义的内容都是节点，它们构成了一个HTML DOM树。</p>
+<p>我们先看下什么是DOM，DOM是W3C（万维网联盟）的标准，其英文全称Document Object Model，即文档对象模型。它定义了访问HTML和XML文档的标准：</p>
+<blockquote>
+<p>W3C文档对象模型（DOM）是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。</p>
+</blockquote>
+<p>W3C DOM标准被分为3个不同的部分。</p>
+<ul>
+<li><strong>核心DOM</strong>： 针对任何结构化文档的标准模型。</li>
+<li><strong>XML DOM</strong>：针对XML文档的标准模型。</li>
+<li><strong>HTML DOM</strong>：针对HTML文档的标准模型。</li>
+</ul>
+<p>根据W3C的HTML DOM标准，HTML文档中的所有内容都是节点。</p>
+<ul>
+<li>整个文档是一个文档节点；</li>
+<li>每个HTML元素是元素节点；</li>
+<li>HTML元素内的文本是文本节点；</li>
+<li>每个HTML属性是属性节点；</li>
+<li>注释是注释节点。</li>
+</ul>
+<p>HTML DOM将HTML文档视作树结构，这种结构被称为节点树，如图2-11所示。</p>
+<p><img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/2-12.jpg" alt="img">图2-11 节点树</p>
+<p>通过HTML DOM，树中的所有节点均可通过JavaScript访问，所有HTML节点元素均可被修改，也可以被创建或删除。</p>
+<p>节点树中的节点彼此拥有层级关系。我们常用父（parent）、子（child）和兄弟（sibling）等术语描述这些关系。父节点拥有子节点，同级的子节点被称为兄弟节点。</p>
+<p>在节点树中，顶端节点称为根（root）。除了根节点之外，每个节点都有父节点，同时可拥有任意数量的子节点或兄弟节点。图2-12展示了节点树以及节点之间的关系。</p>
+<p><img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2018/02/2-13.jpg" alt="img">图2-12 节点树及节点间的关系</p>
+<p>本段参考W3SCHOOL，链接：<a href="http://www.w3school.com.cn/htmldom/dom_nodes.asp。" target="_blank" rel="noopener">http://www.w3school.com.cn/htmldom/dom_nodes.asp。</a></p>
+<h2 id="4-选择器"><a href="#4-选择器" class="headerlink" title="4. 选择器"></a>4. 选择器</h2><p>我们知道网页由一个个节点组成，CSS选择器会根据不同的节点设置不同的样式规则，那么怎样来定位节点呢？</p>
+<p>在CSS中，我们使用CSS选择器来定位节点。例如，上例中<code>div</code>节点的<code>id</code>为<code>container</code>，那么就可以表示为<code>#container</code>，其中<code>#</code>开头代表选择<code>id</code>，其后紧跟<code>id</code>的名称。另外，如果我们想选择<code>class</code>为<code>wrapper</code>的节点，便可以使用<code>.wrapper</code>，这里以点（.）开头代表选择<code>class</code>，其后紧跟<code>class</code>的名称。另外，还有一种选择方式，那就是根据标签名筛选，例如想选择二级标题，直接用<code>h2</code>即可。这是最常用的3种表示，分别是根据<code>id</code>、<code>class</code>、标签名筛选，请牢记它们的写法。</p>
+<p>另外，CSS选择器还支持嵌套选择，各个选择器之间加上空格分隔开便可以代表嵌套关系，如<code>#container .wrapper p</code>则代表先选择<code>id</code>为<code>container</code>的节点，然后选中其内部的<code>class</code>为<code>wrapper</code>的节点，然后再进一步选中其内部的<code>p</code>节点。另外，如果不加空格，则代表并列关系，如<code>div#container .wrapper p.text</code>代表先选择<code>id</code>为<code>container</code>的<code>div</code>节点，然后选中其内部的<code>class</code>为<code>wrapper</code>的节点，再进一步选中其内部的<code>class</code>为<code>text</code>的<code>p</code>节点。这就是CSS选择器，其筛选功能还是非常强大的。</p>
+<p>另外，CSS选择器还有一些其他语法规则，具体如表2-4所示。</p>
+<p>表2-4 CSS选择器的其他语法规则</p>
+<table>
+<thead>
+<tr>
+<th align="center">选择器</th>
+<th align="center">例子</th>
+<th align="center">例子描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>.class</code></td>
+<td align="center"><code>.intro</code></td>
+<td align="center">选择<code>class=&quot;intro&quot;</code>的所有节点</td>
+</tr>
+<tr>
+<td align="center"><code>#id</code></td>
+<td align="center"><code>#firstname</code></td>
+<td align="center">选择<code>id=&quot;firstname&quot;</code>的所有节点</td>
+</tr>
+<tr>
+<td align="center"><code>*</code></td>
+<td align="center"><code>*</code></td>
+<td align="center">选择所有节点</td>
+</tr>
+<tr>
+<td align="center"><code>element</code></td>
+<td align="center"><code>p</code></td>
+<td align="center">选择所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>element,element</code></td>
+<td align="center"><code>div,p</code></td>
+<td align="center">选择所有<code>div</code>节点和所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>element element</code></td>
+<td align="center"><code>div p</code></td>
+<td align="center">选择<code>div</code>节点内部的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>element&gt;element</code></td>
+<td align="center"><code>div&gt;p</code></td>
+<td align="center">选择父节点为<code>div</code>节点的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>element+element</code></td>
+<td align="center"><code>div+p</code></td>
+<td align="center">选择紧接在<code>div</code>节点之后的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>[attribute]</code></td>
+<td align="center"><code>[target]</code></td>
+<td align="center">选择带有<code>target</code>属性的所有节点</td>
+</tr>
+<tr>
+<td align="center"><code>[attribute=value]</code></td>
+<td align="center"><code>[target=blank]</code></td>
+<td align="center">选择<code>target=&quot;blank&quot;</code>的所有节点</td>
+</tr>
+<tr>
+<td align="center"><code>[attribute~=value]</code></td>
+<td align="center"><code>[title~=flower]</code></td>
+<td align="center">选择<code>title</code>属性包含单词<code>flower</code>的所有节点</td>
+</tr>
+<tr>
+<td align="center"><code>:link</code></td>
+<td align="center"><code>a:link</code></td>
+<td align="center">选择所有未被访问的链接</td>
+</tr>
+<tr>
+<td align="center"><code>:visited</code></td>
+<td align="center"><code>a:visited</code></td>
+<td align="center">选择所有已被访问的链接</td>
+</tr>
+<tr>
+<td align="center"><code>:active</code></td>
+<td align="center"><code>a:active</code></td>
+<td align="center">选择活动链接</td>
+</tr>
+<tr>
+<td align="center"><code>:hover</code></td>
+<td align="center"><code>a:hover</code></td>
+<td align="center">选择鼠标指针位于其上的链接</td>
+</tr>
+<tr>
+<td align="center"><code>:focus</code></td>
+<td align="center"><code>input:focus</code></td>
+<td align="center">选择获得焦点的<code>input</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:first-letter</code></td>
+<td align="center"><code>p:first-letter</code></td>
+<td align="center">选择每个<code>p</code>节点的首字母</td>
+</tr>
+<tr>
+<td align="center"><code>:first-line</code></td>
+<td align="center"><code>p:first-line</code></td>
+<td align="center">选择每个<code>p</code>节点的首行</td>
+</tr>
+<tr>
+<td align="center"><code>:first-child</code></td>
+<td align="center"><code>p:first-child</code></td>
+<td align="center">选择属于父节点的第一个子节点的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:before</code></td>
+<td align="center"><code>p:before</code></td>
+<td align="center">在每个<code>p</code>节点的内容之前插入内容</td>
+</tr>
+<tr>
+<td align="center"><code>:after</code></td>
+<td align="center"><code>p:after</code></td>
+<td align="center">在每个<code>p</code>节点的内容之后插入内容</td>
+</tr>
+<tr>
+<td align="center"><code>:lang(language)</code></td>
+<td align="center"><code>p:lang</code></td>
+<td align="center">选择带有以<code>it</code>开头的<code>lang</code>属性值的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>element1~element2</code></td>
+<td align="center"><code>p~ul</code></td>
+<td align="center">选择前面有<code>p</code>节点的所有<code>ul</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>[attribute^=value]</code></td>
+<td align="center"><code>a[src^=&quot;https&quot;]</code></td>
+<td align="center">选择其<code>src</code>属性值以<code>https</code>开头的所有<code>a</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>[attribute$=value]</code></td>
+<td align="center"><code>a[src$=&quot;.pdf&quot;]</code></td>
+<td align="center">选择其<code>src</code>属性以<code>.pdf</code>结尾的所有<code>a</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>[attribute*=value]</code></td>
+<td align="center"><code>a[src*=&quot;abc&quot;]</code></td>
+<td align="center">选择其<code>src</code>属性中包含<code>abc</code>子串的所有<code>a</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:first-of-type</code></td>
+<td align="center"><code>p:first-of-type</code></td>
+<td align="center">选择属于其父节点的首个<code>p</code>节点的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:last-of-type</code></td>
+<td align="center"><code>p:last-of-type</code></td>
+<td align="center">选择属于其父节点的最后<code>p</code>节点的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:only-of-type</code></td>
+<td align="center"><code>p:only-of-type</code></td>
+<td align="center">选择属于其父节点唯一的<code>p</code>节点的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:only-child</code></td>
+<td align="center"><code>p:only-child</code></td>
+<td align="center">选择属于其父节点的唯一子节点的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:nth-child(n)</code></td>
+<td align="center"><code>p:nth-child</code></td>
+<td align="center">选择属于其父节点的第二个子节点的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:nth-last-child(n)</code></td>
+<td align="center"><code>p:nth-last-child</code></td>
+<td align="center">同上，从最后一个子节点开始计数</td>
+</tr>
+<tr>
+<td align="center"><code>:nth-of-type(n)</code></td>
+<td align="center"><code>p:nth-of-type</code></td>
+<td align="center">选择属于其父节点第二个<code>p</code>节点的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:nth-last-of-type(n)</code></td>
+<td align="center"><code>p:nth-last-of-type</code></td>
+<td align="center">同上，但是从最后一个子节点开始计数</td>
+</tr>
+<tr>
+<td align="center"><code>:last-child</code></td>
+<td align="center"><code>p:last-child</code></td>
+<td align="center">选择属于其父节点最后一个子节点的所有<code>p</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:root</code></td>
+<td align="center"><code>:root</code></td>
+<td align="center">选择文档的根节点</td>
+</tr>
+<tr>
+<td align="center"><code>:empty</code></td>
+<td align="center"><code>p:empty</code></td>
+<td align="center">选择没有子节点的所有<code>p</code>节点（包括文本节点）</td>
+</tr>
+<tr>
+<td align="center"><code>:target</code></td>
+<td align="center"><code>#news:target</code></td>
+<td align="center">选择当前活动的<code>#news</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:enabled</code></td>
+<td align="center"><code>input:enabled</code></td>
+<td align="center">选择每个启用的<code>input</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:disabled</code></td>
+<td align="center"><code>input:disabled</code></td>
+<td align="center">选择每个禁用的<code>input</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:checked</code></td>
+<td align="center"><code>input:checked</code></td>
+<td align="center">选择每个被选中的<code>input</code>节点</td>
+</tr>
+<tr>
+<td align="center"><code>:not(selector)</code></td>
+<td align="center"><code>:not</code></td>
+<td align="center">选择非<code>p</code>节点的所有节点</td>
+</tr>
+<tr>
+<td align="center"><code>::selection</code></td>
+<td align="center"><code>::selection</code></td>
+<td align="center">选择被用户选取的节点部分</td>
+</tr>
+</tbody></table>
+<p>另外，还有一种比较常用的选择器是XPath，这种选择方式后面会详细介绍。</p>
+<p>本节介绍了网页的基本结构和节点间的关系，了解了这些内容，我们才有更加清晰的思路去解析和提取网页内容。</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">无邪</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://mossloo.cn/posts/233329.html">https://mossloo.cn/posts/233329.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">无邪</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">爬虫</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'tgC60CxSuclfFLOaa0kDFD6K-9Nh9j0Va',
+        appKey: 'RmWOg6EGvn5xW7vWnDd6yLWr',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/null.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 2.3-爬虫的基本原理">
+                        
+                        <span class="card-title">[Python3网络爬虫开发实战] 2.3-爬虫的基本原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/233237.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 2-爬虫基础">
+                        
+                        <span class="card-title">[Python3网络爬虫开发实战] 2-爬虫基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                             在写爬虫之前，我们还需要了解一些基础知识，如HTTP原理、网页的基础知识、爬虫的基本原理、Cookies的基本原理等。本章中，我们就对这些基础知识做一个简单的总结。 
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">无邪</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">30.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "5";
+                    var startDate = "10";
+                    var startHour = "20";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/wzybmw888" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:mailto:1472078824@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1472078824" class="tooltipped" target="_blank" data-tooltip="QQ联系我" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/7363345126/profile?topnav=1&amp;wvr=6" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+    <a href="https://www.zhihu.com/people/bmw888" class="tooltipped" target="_blank" data-tooltip="关注我的知乎" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+		<style>
+		    .github-badge {
+		        display:inline-block;
+		        border-radius:4px;
+		        text-shadow:none;
+		        font-size:13px;
+		        color:#fff;
+		        line-height:15px;
+		        background-color:#ABBAC3;
+		        margin-bottom:5px;
+		    }
+		    .github-badge .badge-subject {
+		        display:inline-block;
+		        background-color:#4D4D4D;
+		        padding:4px 4px 4px 6px;
+		        border-top-left-radius:4px;
+		        border-bottom-left-radius:4px;
+		    }
+		    .github-badge .badge-value {
+		        display:inline-block;
+		        padding:4px 6px 4px 4px;
+		        border-top-right-radius:4px;
+		        border-bottom-right-radius:4px;
+		    }
+		    .github-badge .bg-brightgreen {
+		        background-color:#4DC820 !important;
+		    }
+		    .github-badge .bg-orange {
+		        background-color:#FFA500 !important;
+		    }
+		    .github-badge .bg-yellow {
+		        background-color:#D8B024 !important;
+		    }
+		    .github-badge .bg-blueviolet {
+		        background-color:#8833D7 !important;
+		    }
+		    .github-badge .bg-pink {
+		        background-color:#F26BAE !important;
+		    }
+		    .github-badge .bg-red {
+		        background-color:#e05d44 !important;
+		    }
+		    .github-badge .bg-blue {
+		        background-color:#007EC6 !important;
+		    }
+		    .github-badge .bg-lightgrey {
+		        background-color:#9F9F9F !important;
+		    }
+		    .github-badge .bg-grey, .github-badge .bg-gray {
+		        background-color:#555 !important;
+		    }
+		    .github-badge .bg-lightgrey, .github-badge .bg-lightgray {
+		        background-color:#9f9f9f !important;
+		    }
+		</style>
+		
+		<!-- <div class="github-badge">
+		            <a style="color: #fff" rel="license" href="https://hexo.io/" target="_blank" title="由 Hexo 强力驱动">
+		            <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></a>
+		          </div>
+		          <div class="github-badge">
+		            <a style="color: #fff" rel="license" href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages 和 Gitee Pages">
+		            <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">GitHub & Coding & Gitee</span></a>
+		          </div>
+		          <div class="github-badge">
+		            <a style="color: #fff" rel="license" href="https://cloud.tencent.com/" target="_blank" title="腾讯云提供域名相关服务">
+		            <span class="badge-subject">DNS</span><span class="badge-value bg-blueviolet">Tencent</span></a>
+		          </div>
+		          <div class="github-badge">
+		            <a style="color: #fff" rel="license" href="https://www.jsdelivr.com/" target="_blank" title="jsDelivr 提供 CDN 加速服务">
+		            <span class="badge-subject">CDN</span><span class="badge-value bg-orange">jsDelivr</span></a>
+		          </div>
+		          <div class="github-badge">
+		              <a style="color: #fff" rel="license" href="https://blinkfox.github.io/" target="_blank" title="站点使用 Matery主题">
+		            <span class="badge-subject">Theme</span><span class="badge-value bg-blue">Matery</span></a>
+		          </div>
+		          <div class="github-badge">
+		            <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
+		            <span class="badge-subject"><i class="fa fa-copyright"></i></span><span class="badge-value bg-lightgrey">BY-NC-SA 4.0</span></a>
+		          </div>
+		          <div class="github-badge">
+		            <a style="color: #fff" rel="license" href="https://996.icu/" target="_blank" title="支持 996.ICU">
+		            <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
+		          </div>
+		          <div class="github-badge">
+		            <span class="badge-subject">UV</span><span class="badge-value bg-orange" id="busuanzi_value_site_uv"></span>
+		          </div>
+		          <div class="github-badge">
+		            <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
+		          </div>
+		          <div class="github-badge">
+		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">30.6k</span>
+		          </div>
+		</div> -->
+	
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "925a98ba"
+        });
+        daovoice('update');
+    </script>
+	<script type="text/javascript">
+	    var OriginTitile=document.title,st;
+		document.addEventListener("visibilitychange",function(){
+	        document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+	    })
+	</script>
+	
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+	
+</body>
+
+</html>
