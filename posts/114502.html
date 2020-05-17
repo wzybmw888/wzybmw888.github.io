@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="[Python3网络爬虫开发实战] 1.4.2-MongoDB安装, 经济学，学习，专注web等">
+    <meta name="keywords" content="c语言指针, 经济学，学习，专注web等">
     <meta name="description" content="一个较真的理工男，专注于前端设计，经济分析，机械设计等专业！共享学习资料，与您一起前进！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[Python3网络爬虫开发实战] 1.4.2-MongoDB安装 | Mossloo博客</title>
+    <title>c语言指针 | Mossloo博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://wzy-1302043975.cos.ap-shanghai.myqcloud.com/catoon/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[Python3网络爬虫开发实战] 1.4.2-MongoDB安装</h1>
+                    <h1 class="description center-align post-title">c语言指针</h1>
                 </div>
             </div>
         </div>
@@ -374,12 +374,12 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/%E6%89%A7%E6%94%BF/">
+                                <span class="chip bg-color">执政</span>
                             </a>
                         
-                            <a href="/tags/%E7%88%AC%E8%99%AB/">
-                                <span class="chip bg-color">爬虫</span>
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">C语言</span>
                             </a>
                         
                     </div>
@@ -390,8 +390,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="post-category">
+                                C语言
                             </a>
                         
                     </div>
@@ -403,21 +403,21 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-14
+                    2020-05-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-14
+                    2020-05-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    146
+                    385
                 </div>
                 
 
@@ -439,14 +439,47 @@ if (windowWidth > 768) {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>关于 4.x 的安装教程，可以参考如下内容：</p>
-<ul>
-<li><a href="https://juejin.im/post/5d525b1af265da03b31bc2d5" target="_blank" rel="noopener">https://juejin.im/post/5d525b1af265da03b31bc2d5</a></li>
-<li><a href="https://www.cnblogs.com/TM0831/p/10606624.html" target="_blank" rel="noopener">https://www.cnblogs.com/TM0831/p/10606624.html</a></li>
-<li><a href="https://www.cnblogs.com/georgeleoo/p/11479409.html" target="_blank" rel="noopener">https://www.cnblogs.com/georgeleoo/p/11479409.html</a></li>
-</ul>
-<p>MongoDB是由C++语言编写的非关系型数据库，是一个基于分布式文件存储的开源数据库系统，其内容存储形式类似JSON对象，它的字段值可以包含其他文档、数组及文档数组，非常灵活。</p>
-<p>MongoDB支持多种平台，包括Windows、Linux、Mac OS、Solaris等，在其官方网站（<a href="https://www.mongodb.com/download-center）均可找到对应的安装包。" target="_blank" rel="noopener">https://www.mongodb.com/download-center）均可找到对应的安装包。</a></p>
+                <h3 id="一-概念"><a href="#一-概念" class="headerlink" title="一.概念"></a>一.概念</h3><p>指针：一个变量的地址就是该变量的指针</p>
+<p>变量的指针：变量的地址</p>
+<p>指针变量：同基本类型变量一样，比如说： int，char，float等，需要先声明类型，再初始化，分配一块内存地址</p>
+<h3 id="二-指针的声明和使用"><a href="#二-指针的声明和使用" class="headerlink" title="二.指针的声明和使用"></a>二.指针的声明和使用</h3><h4 id="1-取地址运算"><a href="#1-取地址运算" class="headerlink" title="1.取地址运算"></a>1.取地址运算</h4><pre><code class="c">int*pointer_i,*p,i; //声明类型
+int a[10],*q;
+pointer_i = &amp;i;  //取i的地址赋给pointer_i，这样poninter_i就指向了i在内存中存储的位置，获得i的值
+p = pointer_i;
+q = &amp;a[1];</code></pre>
+<h4 id="2-指针变量的初始化"><a href="#2-指针变量的初始化" class="headerlink" title="2.指针变量的初始化"></a>2.指针变量的初始化</h4><pre><code class="c">int x,y,*a,*b;
+a=&amp;x;b=&amp;y;
+x=1;y=2;</code></pre>
+<p>或者：</p>
+<pre><code>int x,y,*a=&amp;x,*b;
+b=&amp;y;
+x=1;y=2;</code></pre><h3 id="3-空指针NULL"><a href="#3-空指针NULL" class="headerlink" title="3.空指针NULL"></a>3.空指针NULL</h3><pre><code>int*p=null</code></pre><p>其中p指针指向地址为0的单元，系统保证使他不作存放有效数据的地址</p>
+<p><strong>注意：不能对null的指针间接引用运算</strong></p>
+<h3 id="三-指针表达式"><a href="#三-指针表达式" class="headerlink" title="三.指针表达式"></a>三.指针表达式</h3><h4 id="1-赋值运算"><a href="#1-赋值运算" class="headerlink" title="1.赋值运算"></a>1.赋值运算</h4><pre><code class="c">int i,*p1，*p2;
+p1=&amp;i;
+p2=p1;</code></pre>
+<h4 id="2-算术运算"><a href="#2-算术运算" class="headerlink" title="2.算术运算"></a>2.算术运算</h4><p>*p++相当于 *(p++),指针后移两个字节</p>
+<p>(*p)++ 对p的内容自加1</p>
+<p>p1-p2=[(p1的值)-(p2的值)]/基类型长度</p>
+<h4 id="3-关系运算"><a href="#3-关系运算" class="headerlink" title="3.关系运算"></a>3.关系运算</h4><p>p1&lt;p2</p>
+<p>若p1的指向位置在前，则返回1</p>
+<h4 id="4-指针变量作为函数的参数"><a href="#4-指针变量作为函数的参数" class="headerlink" title="4.指针变量作为函数的参数"></a>4.指针变量作为函数的参数</h4><p>交换函数</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+int main()
+{
+    void swap(int*a,int*b);
+    int i=1,j=2;
+    int*point_i=&amp;i,*point_j=&amp;j;
+    printf(&quot;i=%d,j=%d\n&quot;,i,j);
+    if(i&lt;j)
+    swap(point_i,point_j);
+    printf(&quot;i=%d,j=%d\n&quot;,i,j);
+}
+void swap(int*a,int*b){
+    int t=*a;
+    *a=*b;
+    *b=t;
+}</code></pre>
 
             </div>
             <hr/>
@@ -472,7 +505,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mossloo.cn/posts/1.html">https://mossloo.cn/posts/1.html</a>
+                    <a href="https://mossloo.cn/posts/114502.html">https://mossloo.cn/posts/114502.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -510,12 +543,12 @@ if (windowWidth > 768) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/%E6%89%A7%E6%94%BF/">
+                                    <span class="chip bg-color">执政</span>
                                 </a>
                             
-                                <a href="/tags/%E7%88%AC%E8%99%AB/">
-                                    <span class="chip bg-color">爬虫</span>
+                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">C语言</span>
                                 </a>
                             
                         </div>
@@ -946,50 +979,54 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/5.html">
+                <a href="/posts/114502.html">
                     <div class="card-image">
                         
+                        <img src="https://wzy-1302043975.cos.ap-shanghai.myqcloud.com/catoon/13.jpg" class="responsive-img" alt="c语言指针">
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 1.5-存储库的安装">
-                        
-                        <span class="card-title">[Python3网络爬虫开发实战] 1.5-存储库的安装</span>
+                        <span class="card-title">c语言指针</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                             1.4节中，我们介绍了几个数据库的安装方式，但这仅仅是用来存储数据的数据库，它们提供了存储服务，但如果想要和Python交互的话，还需要安装一些Python存储库，如MySQL需要安装PyMySQL，MongoDB需要安装PyMongo等
+                            一.概念指针：一个变量的地址就是该变量的指针
+变量的指针：变量的地址
+指针变量：同基本类型变量一样，比如说： int，char，float等，需要先声明类型，再初始化，分配一块内存地址
+二.指针的声明和使用1.取地址运算int*pointe
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    C语言
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%89%A7%E6%94%BF/">
+                        <span class="chip bg-color">执政</span>
                     </a>
                     
-                    <a href="/tags/%E7%88%AC%E8%99%AB/">
-                        <span class="chip bg-color">爬虫</span>
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
                     </a>
                     
                 </div>
@@ -1003,28 +1040,24 @@ if (windowWidth > 768) {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/10005.html">
+                <a href="/posts/null.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 1.4.1-MySQL的安装">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="[Python3网络爬虫开发实战] 3.1.1-发送请求">
                         
-                        <span class="card-title">[Python3网络爬虫开发实战] 1.4.1-MySQL的安装</span>
+                        <span class="card-title">[Python3网络爬虫开发实战] 3.1.1-发送请求</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MySQL是一个轻量级的关系型数据库，本节中我们来了解下它的安装方式。
-1. 相关链接
-官方网站：https://www.mysql.com/cn
-下载地址：https://www.mysql.com/cn/downloads
-中文教程：h
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-15
                             </span>
                         <span class="publish-author">
                             
