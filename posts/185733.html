@@ -476,14 +476,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    193
+                    798
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -511,7 +511,52 @@ if (windowWidth > 768) {
 <li>单行注释以#开头</li>
 <li>多行注释用多个#号 还有’’’和“”“</li>
 </ul>
+<h2 id="行与缩进"><a href="#行与缩进" class="headerlink" title="行与缩进"></a>行与缩进</h2><p>python最具特色的就是使用缩进来表示代码块，不需要使用大括号 <strong>{}</strong> 。</p>
+<p>缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数。</p>
+<pre><code>if True:
+    print (&quot;True&quot;)
+else:
+    print (&quot;False&quot;)</code></pre><h2 id="多行语句"><a href="#多行语句" class="headerlink" title="多行语句"></a>多行语句</h2><p> Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠(\)来实现多行语句，例如： </p>
+<pre><code>total = item_one + \
+        item_two + \
+        item_three</code></pre><p> 在 [], {}, 或 () 中的多行语句，不需要使用反斜杠()，例如： </p>
+<pre><code>total = [&#39;item_one&#39;, &#39;item_two&#39;, &#39;item_three&#39;,
+        &#39;item_four&#39;, &#39;item_five&#39;]</code></pre><h2 id="数字-Number-类型"><a href="#数字-Number-类型" class="headerlink" title="数字(Number)类型"></a>数字(Number)类型</h2><p>python中数字类型有四种：整数、布尔型、浮点数和复数</p>
+<ul>
+<li>int 表示长整型 没有Long</li>
+<li>bool 如：True</li>
+<li>float 表示浮点数 如：1.23、3E-2</li>
+<li>complex 表示复数 如 1+2j</li>
+</ul>
+<h2 id="字符串-String"><a href="#字符串-String" class="headerlink" title="字符串(String)"></a>字符串(String)</h2><ul>
+<li>python中单引号和双引号使用完全相同。</li>
+<li>使用三引号(‘’’或”””)可以指定一个多行字符串。</li>
+<li>转义符 ‘\‘</li>
+<li>反斜杠可以用来转义，<strong>使用r可以让反斜杠不发生转义</strong>。。 如 r”this is a line with \n” 则\n会显示，并不是换行。</li>
+<li>按字面意义级联字符串，如”this “ “is “ “string”会被自动转换为this is string。</li>
+<li>字符串可以用 + 运算符连接在一起，用 * 运算符重复。</li>
+<li>Python 中的字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。</li>
+<li>Python中的字符串不能改变。</li>
+<li>Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。</li>
+<li>字符串的截取的语法格式如下：<strong>变量[头下标:尾下标:步长]</strong></li>
+</ul>
+<pre><code>word = &#39;字符串&#39;
+sentence = &quot;这是一个句子。&quot;
+paragraph = &quot;&quot;&quot;这是一个段落，
+可以由多行组成&quot;&quot;&quot;</code></pre><pre><code>str=&#39;Runoob&#39;
 
+print(str)                 # 输出字符串
+print(str[0:-1])           # 输出第一个到倒数第二个的所有字符
+print(str[0])              # 输出字符串第一个字符
+print(str[2:5])            # 输出从第三个开始到第五个的字符
+print(str[2:])             # 输出从第三个开始后的所有字符
+print(str * 2)             # 输出字符串两次
+print(str + &#39;你好&#39;)        # 连接字符串
+
+print(&#39;------------------------------&#39;)
+
+print(&#39;hello\nrunoob&#39;)      # 使用反斜杠(\)+n转义特殊字符
+print(r&#39;hello\nrunoob&#39;)     # 在字符串前面添加一个 r，表示原始字符串，不会发生转义</code></pre>
             </div>
             <hr/>
 
@@ -1006,36 +1051,33 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/185733.html">
+                <a href="/posts/213652.html">
                     <div class="card-image">
                         
-                        <img src="http://cdn.mossloo.cn/image/cartoon1.png" class="responsive-img" alt="1.python基础语法">
+                        <img src="http://cdn.mossloo.cn/image/cartoon2.ipg" class="responsive-img" alt="设计模式">
                         
-                        <span class="card-title">1.python基础语法</span>
+                        <span class="card-title">设计模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python3基础语法标识符
-第一个字符必须是以字母下划线_
-标识符其它部分由字母下划线和数字组成
-对大小写敏感
+                            1.单例设计模式1.1何为单例设计模式： 让类创建出来的对象在系统中只有一个实例
+1.2如何设计？class A(object):
+    instance = None
 
-在python3中，可以用中文作为变量名
-python关键字&gt;&gt;&gt; import keyword
-&gt;
+
+    def __new__(cls, *args, **kw
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1048,7 +1090,6 @@ python关键字&gt;&gt;&gt; import keyword
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1316,7 +1357,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">193</span>&nbsp;字
+                class="white-color">2.6k</span>&nbsp;字
             
             
             
@@ -1518,7 +1559,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 		            <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
 		          </div>
 		          <div class="github-badge">
-		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">193</span>
+		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">2.6k</span>
 		          </div>
 		</div> -->
 	
