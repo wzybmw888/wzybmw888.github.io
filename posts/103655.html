@@ -476,14 +476,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    319
+                    528
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -507,8 +507,8 @@ if (windowWidth > 768) {
 <li>os.makedirs(‘dirname1/dirname2’) 可生成多层递归目录</li>
 <li>os.removedirs(‘dirname’)  若目录为空，则删除 并且递归到·上一层目录，如果也是空，则删除</li>
 <li>os.mkdir(‘dirname’)  生成单级目录，相当于shell中mkdir dirname</li>
-<li>os.rmdi(‘dirname’) 删除单级空目录 如果不为空则无法删除，相当于shell中rmdir</li>
-<li>os.lisrdir(‘dirname’) 列出指定目录下的所有文件和子目录，包括隐藏文件，并且以列表方式打开</li>
+<li>os.rmdir(‘dirname’) 删除单级空目录 如果不为空则无法删除，相当于shell中rmdir</li>
+<li>os.listdir(‘dirname’) 列出指定目录下的所有文件和子目录，包括隐藏文件，并且以列表方式打开</li>
 <li>os.remove()  删除一个文件</li>
 <li>os.rename(‘oldname’, ‘newname’) 重命名文件/目录</li>
 <li>os.stat(‘path/filename’) 获取文件/目录信息</li>
@@ -518,6 +518,17 @@ if (windowWidth > 768) {
 <li>os.name 输出字符串指示当前使用平台 win-&gt;’nt’;linux-&gt;’posix’</li>
 <li>os.system(‘bash command’) 运行shell命令直接显示</li>
 <li>os.environ 获取系统环境变量</li>
+<li>os.path.abspath(path)  返回path规范化的绝对路径</li>
+<li>os.path.split(path) 将path分割成目录和文件名二元组返回</li>
+<li>os.path.dirname(path) 返回path目录 就是os.path.spilt(path)中第一个元素</li>
+<li>os.path.basename(path) 返回path最后的文件，如果以\或者/结尾 回返回空值</li>
+<li>os.path.exsists(path) 如果path存在返回True 如果不存在 False</li>
+<li>os.path.isabs(path) 判读path是不是绝对路径 是返回true</li>
+<li>os.path.isfile(path) 如果path是一个存在的文件返回true</li>
+<li>os.path.isdir(path) 如果path是一个存在的目录返回true</li>
+<li>os.path.join(path1, path2) 将多个路径组合后返回</li>
+<li>os.path.getatime(path) 返回path所指向的文件或者目录最后存时间</li>
+<li>os.path.getmtime(path) 返回path所指向的文件或者目录最后修改时间</li>
 </ol>
 
             </div>
@@ -1014,34 +1025,36 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/103655.html">
+                <a href="/posts/121022.html">
                     <div class="card-image">
                         
-                        <img src="http://cdn.mossloo.cn/image/cartoon3.jpg" class="responsive-img" alt="os模块">
+                        <img src="http://cdn.mossloo.cn/image/cartoon4.jpg" class="responsive-img" alt="sys模块">
                         
-                        <span class="card-title">os模块</span>
+                        <span class="card-title">sys模块</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            OS模块提供对操作系统进行调用的接口
+                            SYS模块与python解释器交互
 
-os.getcwd()  获取当前python脚本工作的目录路径
-os.chdir(‘dirname’) 改变当前脚本工作目录,相当于cd
-os.curdir 返回当前目录
-os.pardir 获取当
+sys.argv 命令行参数list，第一个元素是程序本身路径
+
+sys.exit(n) 退出程序 正常退出exit(0)
+
+sys.version 获取python解释器程序的版本信息
+
+sys.pa
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-05
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-05
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1054,12 +1067,11 @@ os.pardir 获取当
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E5%BA%93/">
-                        <span class="chip bg-color">python库</span>
+                    <a href="/tags/python%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python模块</span>
                     </a>
                     
                 </div>
@@ -1319,7 +1331,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.6k</span>&nbsp;字
+                class="white-color">3k</span>&nbsp;字
             
             
             
@@ -1521,7 +1533,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 		            <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
 		          </div>
 		          <div class="github-badge">
-		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">2.6k</span>
+		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">3k</span>
 		          </div>
 		</div> -->
 	
