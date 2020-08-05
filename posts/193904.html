@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="sys模块, 经济学，学习，专注web等">
+    <meta name="keywords" content="bs4库, 经济学，学习，专注web等">
     <meta name="description" content="一个较真的理工男，专注于前端设计，经济分析，机械设计等专业！共享学习资料，与您一起前进！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>sys模块 | Mossloo博客</title>
+    <title>bs4库 | Mossloo博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,7 +320,7 @@ if (windowWidth > 768) {
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">sys模块</h1>
+                    <h1 class="description center-align post-title">bs4库</h1>
                 </div>
             </div>
         </div>
@@ -437,8 +437,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python%E6%A8%A1%E5%9D%97/">
-                                <span class="chip bg-color">python模块</span>
+                            <a href="/tags/python%E5%BA%93/">
+                                <span class="chip bg-color">python库</span>
                             </a>
                         
                     </div>
@@ -476,14 +476,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    97
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -498,21 +498,115 @@ if (windowWidth > 768) {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="SYS模块"><a href="#SYS模块" class="headerlink" title="SYS模块"></a>SYS模块</h3><p>与python解释器交互</p>
-<ol>
-<li><p>sys.argv 命令行参数list，第一个元素是程序本身路径</p>
-</li>
-<li><p>sys.exit(n) 退出程序 正常退出exit(0)</p>
-</li>
-<li><p>sys.version 获取python解释器程序的版本信息</p>
-</li>
-<li><p>sys.path 返回模块的搜索路径，初始化时使用PYTHONPATH环境变量的值</p>
-</li>
-<li><p>sys.platform 返回操作系统平台名称</p>
-</li>
-<li><p>sys.stdout.write(‘please:’)</p>
-</li>
-</ol>
+                <pre><code>from bs5 import BeautifulSoup as bs
+text= &#39;&#39;&#39;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta = charset=&#39;UTF-8&#39; &gt;
+    &lt;title id =1 href = &#39;http://example.com/elsie&#39; class = &#39;title&#39;&gt;Test&lt;/title&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div id = &#39;ok&#39;&gt;
+       &lt;div class = &#39;nice&#39;&gt;
+           &lt;p class = &#39;p&#39;&gt;
+               Hello World
+           &lt;/p&gt;
+            &lt;p class = &#39;e&#39;&gt;
+               风一般的男人
+           &lt;/p&gt;
+       &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/body&gt; 
+&lt;/html&gt;
+&#39;&#39;&#39;
+soup = bs(text,&#39;html.parser&#39;)
+print(soup.title.text)#text获取文本内容
+print(soup.title.attrs)#获取属性
+print(soup.title.attrs[&#39;class&#39;])#返回键值为class的值
+print(soup.title.get(&#39;class&#39;))
+#find找到一条标签 find_all找到所有同类标签
+print(soup.find(&#39;p&#39;).text.lstrip())
+print(soup.find_all(&#39;p&#39;))
+for i in soup.find_all(&#39;p&#39;):
+    print(i.text.lstrip())
+soup.find(&#39;p&#39;,class_=&#39;e&#39;).text
+#输出找到的‘p&#39;字符中类名为e的文本内容
+#css选择器，有讲究
+print(soup.select(&#39;title&#39;))
+print(soup.select(&#39;.nice&#39;))
+print(soup.select(&#39;#ok&#39;))</code></pre><p> 然后就是进阶了，从贴吧上的一个帖子来进行爬取，思路是这样的：<br><img src="https://img-blog.csdnimg.cn/20200723231106780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xvZmZpQg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> </p>
+<pre><code>from bs4 import BeautifulSoup as bs
+#导入bs4库，切记文件名不能和导入库重合，否则会循环导入
+import requests
+#导入requests库
+html=requests.get(&#39;http://tieba.baidu.com/p/6832029659&#39;)
+#定位到网页
+soup=bs(html.text,&#39;html.parser&#39;)
+#爬取网页
+images = soup.find_all(&#39;img&#39;,class_=&#39;BDE_Image&#39;)
+#通过检查元素，将本贴内的全部照片爬取
+for img in images:
+    print(&#39;*&#39;*100)</code></pre><p><img src="https://img-blog.csdnimg.cn/20200723231538949.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xvZmZpQg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>爬取成功的结果就是桌面多了很多图片。。。<br>那我们要是再进一步呢？我们爬取评论和相关的评论信息，再导入数据库怎么样？<br>搞起！</p>
+<pre><code class="python">from bs4 import BeautifulSoup as bs
+import requests
+from pymongo import MongoClient
+#导入库并且链接mongo
+conn=MongoClient(&#39;&#39;,27017)
+#抱歉为了隐私省去ip地址
+print(conn)
+db=conn[&#39;Ikun&#39;]
+my_set=db[&#39;lwk1101_set&#39;]
+headers={
+    &#39;User-Agent&#39;:&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18362&#39;
+}
+#headers重要性来了，确定接口
+def get_comment(MovieID,page):
+#这里我们定义一个函数，这个函数要实现的功能就是爬取昵称，时间，评级和评论
+    page=(page-1)*10
+    #这里解释一下，主要是通过对元素的分析发现每一部电影会对应一个相应的ID,评论页的计算方式就如上所示，如实还原
+    url=&#39;https://movie.douban.com/subject/%s/comments?start=%d&amp;limit=20&amp;sort=new_score&amp;status=P&#39;%(MovieID,page)
+    html=requests.get(url=url,headers=headers)
+    #确定地址，连接端口
+    soup=bs(html.text,&#39;html.parser&#39;)
+    #爬取界面所有文本内容
+    boxes=soup.find_all(&#39;div&#39;,class_=&#39;comment-item&#39;)
+    #找到所有的同类标签项
+    star=0
+    #先定义一个star变量，为了后面好使用
+    for box in boxes:
+        print(&#39;$&#39;*100)
+        nickname = box.find(&#39;span&#39;,class_=&#39;comment-info&#39;).a.text
+        #爬取昵称
+        print(nickname)
+        #输出昵称
+        comment = box.find(&#39;span&#39;,class_=&#39;short&#39;).text
+        #爬取评论
+        print(comment)
+        time = box.find(&#39;span&#39;,class_=&#39;comment-time&#39;).attrs[&#39;title&#39;]
+        #返回对应标签内容
+
+        print(time)
+        try:
+            star=int(box.find(&#39;span&#39;,class_=&#39;rating&#39;).attrs[&#39;class&#39;][0].split(&#39;allstar&#39;)[1])//10
+            #这里我们发现他的书写方式是AllstarXX rating
+            #XX对应的是评星*10，但是我们要抓取这个评星就要对整个内容进行切割
+            #先抓取rating类下的所有内容，然后返回class标签下的内容
+            #将一个字符串化为一个输入型然后切割
+            #得到想要的数字，进行取商
+            #这里选择.attrs[&#39;class&#39;][0],因为‘allstar’是一整个字符串，下面的那个评论时间如果取第一个就是第一个数字
+            print(star)
+        except:
+            pass
+        my_set.insert_one({&#39;name&#39;:nickname, &#39;time&#39;: time,&#39;comment&#39;:comment,&#39;star&#39;:star})
+        #对MongoDB进行数据输入
+        print(&quot;Congratulations！&quot;)
+
+for i in range(1,11):
+#这里我们取十页的评论
+    print(get_comment(&#39;30328825&#39;,i))
+    #调用函数，确定想要爬取的电影对应的编号123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200723232418300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xvZmZpQg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>不难发现这个div class=’comment-item’对应的就是整个评论部分</p>
 
             </div>
             <hr/>
@@ -538,7 +632,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mossloo.cn/posts/121022.html">https://mossloo.cn/posts/121022.html</a>
+                    <a href="https://mossloo.cn/posts/193904.html">https://mossloo.cn/posts/193904.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,8 +670,8 @@ if (windowWidth > 768) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python%E6%A8%A1%E5%9D%97/">
-                                    <span class="chip bg-color">python模块</span>
+                                <a href="/tags/python%E5%BA%93/">
+                                    <span class="chip bg-color">python库</span>
                                 </a>
                             
                         </div>
@@ -1008,33 +1102,33 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/123528.html">
+                <a href="/posts/193904.html">
                     <div class="card-image">
                         
-                        <img src="http://cdn.mossloo.cn/image/cartoon1.png" class="responsive-img" alt="hashlib模块">
+                        <img src="http://cdn.mossloo.cn/image/cartoon4.jpg" class="responsive-img" alt="bs4库">
                         
-                        <span class="card-title">hashlib模块</span>
+                        <span class="card-title">bs4库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            HASHLIB模块加密模块
-md5算法
-import hashlib
-m = hashlib.md5()
-m.update(&#39;helloWorld&#39;.encode(&#39;utf8&#39;))
-print(m.hexdi
+                            from bs5 import BeautifulSoup as bs
+text= &#39;&#39;&#39;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta = charset=&#39;UTF-8&#3
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1047,11 +1141,12 @@ print(m.hexdi
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E6%A8%A1%E5%9D%97/">
-                        <span class="chip bg-color">python模块</span>
+                    <a href="/tags/python%E5%BA%93/">
+                        <span class="chip bg-color">python库</span>
                     </a>
                     
                 </div>
@@ -1065,23 +1160,19 @@ print(m.hexdi
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/103655.html">
+                <a href="/posts/125613.html">
                     <div class="card-image">
                         
-                        <img src="http://cdn.mossloo.cn/image/cartoon3.jpg" class="responsive-img" alt="os模块">
+                        <img src="http://cdn.mossloo.cn/image/cartoon2.png" class="responsive-img" alt="logging模块">
                         
-                        <span class="card-title">os模块</span>
+                        <span class="card-title">logging模块</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            OS模块提供对操作系统进行调用的接口
-
-os.getcwd()  获取当前python脚本工作的目录路径
-os.chdir(‘dirname’) 改变当前脚本工作目录,相当于cd
-os.curdir 返回当前目录
-os.pardir 获取当
+                            logging模块步骤：1.配置日志信息 logging.basicConfig2.取得 logging.Logger 对象3.使用 Logger 对象输出信息以下是一个简单的封装，模拟实现 Android 中的 Log 类
+import 
                         
                     </div>
                     <div class="publish-info">
@@ -1103,8 +1194,8 @@ os.pardir 获取当
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E5%BA%93/">
-                        <span class="chip bg-color">python库</span>
+                    <a href="/tags/python%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python模块</span>
                     </a>
                     
                 </div>
