@@ -476,14 +476,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    956
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -498,7 +498,114 @@ if (windowWidth > 768) {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h3 id="logging模块"><a href="#logging模块" class="headerlink" title="logging模块"></a>logging模块</h3><p>步骤：<br>1.配置日志信息 logging.basicConfig<br>2.取得 logging.Logger 对象<br>3.使用 Logger 对象输出信息以下是一个简单的封装，模拟实现 Android 中的 Log 类</p>
+<pre><code>import logging
+import sys
+
+str_def_fmt = &quot;%(asctime)s.%(msecs)03d %(thread)d %(levelname)s &quot; \
+              &quot;%(module)s %(filename)s:%(lineno)d %(funcName)s: %(message)s&quot;
+logging.basicConfig(level=logging.DEBUG
+                    , format=str_def_fmt
+                    , datefmt=&quot;%Y:%m:%d %H:%M:%S&quot;
+                    , stream=sys.stdout)
+logger = logging.getLogger(&quot;log&quot;)
+
+
+def setAsDebugLevel():
+    logger.setLevel(logging.DEBUG)
+
+def setAsInfoLevel():
+    logger.setLevel(logging.INFO)
+
+def setAsWarnLevel():
+    logger.setLevel(logging.WARN)
+
+def setAsErrorLevel():
+    logger.setLevel(logging.ERROR)
+
+def setAsFatalLevel():
+    logger.setLevel(logging.FATAL)
+
+d = logger.debug
+i = logger.info
+w = logger.warning
+e = logger.error
+f = logger.fatal
+
+
+def main():
+    d(&quot;test debug msg&quot;)
+    i(&quot;test info msg&quot;)
+    w(&quot;test warn msg&quot;)
+    e(&quot;test err msg&quot;)
+    f(&quot;test fatal msg&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre><pre><code>logging.basicConfig 参数说明
+    默认会创建一个 StreamHandler 并输出到 sys.stderr, 并且使用 BASIC_FORMAT(%(levelname)s:%(name)s:%(message)s) 格式化信息
+
+filename:    指定日志文件名, 此时不会再输出到 StreamHandler 中, 即使指定了新的 stream
+filemode:    指定日志文件的打开模式, &#39;w&#39;或者&#39;a&#39;, 默认为&#39;a&#39;
+format:      指定输出的内容格式, 其配置信息见下文
+datefmt:     输出日期和时间的格式字符串. 与 time.strftime 格式兼容, 不能指定到毫秒级别, 其详细信息见下文
+level        设置日志输出的级别, 小于此级别的信息将被忽略, 默认为 WARNING
+stream       指定输出的流, 默认为 sys.stderr, 如果指定了 filename, 此参数不起作用
+handlers     If specified, this should be an iterable of already created handlers, which will be added to the root handler. Any handler in the list which does not have a formatter assigned will be assigned the formatter created in this function.
+force        If this keyword is specified as true, any existing handlers attached to the root logger are removed and closed, before carrying out the configuration as specified by the other arguments.
+
+
+日志级别:
+级别                 值       描述
+CRITICAL/FATAL       50       关键错误消息
+ERROR                40       错误
+WARNING(WARN)        30       警告消息
+INFO                 20       通知消息
+DEBUG                10       调试
+NOTSET               0        无级别
+
+
+format 配置格式:
+%(name)s            logger 名称, 即调用 logging.getLogger 函数传入的参数
+%(levelno)s         数字形式的日志记录级别
+%(levelname)s       日志级别文本描述, 即&quot;DEBUG&quot;, &quot;INFO&quot;, &quot;WARNING&quot;, &quot;ERROR&quot;, &quot;CRITICAL&quot;
+%(pathname)s        执行日志记录调用的源文件路径
+%(filename)s        执行日志记录调用的源文件名
+%(module)s          执行日志记录调用的模块名称
+%(lineno)d          执行日志记录调用的行号
+%(funcName)s        执行日志记录调用的函数路径
+%(created)f         执行日志记录调用的时间, 它是 time.time() 返回的数字
+%(asctime)s         执行日志记录调用的ascii格式的时间, 其格式由 datefmt 指定
+%(msecs)d           执行日志记录调用的时间中的毫秒部分
+%(thread)d          线程id (if available)
+%(threadName)s      线程名称 (if available)
+%(process)d         进程ID (if available)
+%(message)s         记录的消息, 如 logging.getLogger().debug(msg) 指定的 msg
+
+
+datefmt
+%y        两位数的年份表示（00-99）
+%Y        四位数的年份表示（000-9999）
+%m        月份（01-12）
+%d        月内中的一天（0-31）
+%H        24小时制小时数（0-23）
+%I        12小时制小时数（01-12）
+%M        分钟数（00=59）
+%S        秒（00-59）
+%a        本地简化星期名称
+%A        本地完整星期名称
+%b        本地简化的月份名称
+%B        本地完整的月份名称
+%c        本地相应的日期表示和时间表示
+%j        年内的一天（001-366）
+%p        本地A.M.或P.M.的等价符
+%U        一年中的星期数（00-53）星期天为星期的开始
+%w        星期（0-6），星期天为星期的开始
+%W        一年中的星期数（00-53）星期一为星期的开始
+%x        本地相应的日期表示
+%X        本地相应的时间表示
+%Z        当前时区的名称
+%%        %号本身</code></pre>
             </div>
             <hr/>
 
@@ -1009,7 +1116,8 @@ if (windowWidth > 768) {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            logging模块步骤：1.配置日志信息 logging.basicConfig2.取得 logging.Logger 对象3.使用 Logger 对象输出信息以下是一个简单的封装，模拟实现 Android 中的 Log 类
+import 
                         
                     </div>
                     <div class="publish-info">
@@ -1293,7 +1401,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3k</span>&nbsp;字
+                class="white-color">3.9k</span>&nbsp;字
             
             
             
@@ -1495,7 +1603,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 		            <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
 		          </div>
 		          <div class="github-badge">
-		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">3k</span>
+		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">3.9k</span>
 		          </div>
 		</div> -->
 	
