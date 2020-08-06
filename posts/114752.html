@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="sys模块, 经济学，学习，专注web等">
+    <meta name="keywords" content="json模块, 经济学，学习，专注web等">
     <meta name="description" content="一个较真的理工男，专注于前端设计，经济分析，机械设计等专业！共享学习资料，与您一起前进！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>sys模块 | Mossloo博客</title>
+    <title>json模块 | Mossloo博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.mossloo.cn/image/cartoon4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.mossloo.cn/image/banner0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">sys模块</h1>
+                    <h1 class="description center-align post-title">json模块</h1>
                 </div>
             </div>
         </div>
@@ -462,21 +462,21 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-05
+                    2020-08-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-05
+                    2020-08-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    97
+                    354
                 </div>
                 
 
@@ -498,22 +498,46 @@ if (windowWidth > 768) {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="SYS模块"><a href="#SYS模块" class="headerlink" title="SYS模块"></a>SYS模块</h3><p>与python解释器交互</p>
-<ol>
-<li><p>sys.argv 命令行参数list，第一个元素是程序本身路径</p>
-</li>
-<li><p>sys.exit(n) 退出程序 正常退出exit(0)</p>
-</li>
-<li><p>sys.version 获取python解释器程序的版本信息</p>
-</li>
-<li><p>sys.path 返回模块的搜索路径，初始化时使用PYTHONPATH环境变量的值</p>
-</li>
-<li><p>sys.platform 返回操作系统平台名称</p>
-</li>
-<li><p>sys.stdout.write(‘please:’)</p>
-</li>
-</ol>
+                <h1 id="JSON模块"><a href="#JSON模块" class="headerlink" title="JSON模块"></a>JSON模块</h1><h3 id="历史简要："><a href="#历史简要：" class="headerlink" title="历史简要："></a>历史简要：</h3><p>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。同时也易于机器解析和生成。它基于JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999的一个子集。</p>
+<p>JSON是[Douglas Crockford](<a href="https://baike.baidu.com/item/Douglas" target="_blank" rel="noopener">https://baike.baidu.com/item/Douglas</a> Crockford/5960317)在2001年开始推广使用的数据格式，在2005年-2006年正式成为主流的数据格式，<a href="https://baike.baidu.com/item/雅虎/108276" target="_blank" rel="noopener">雅虎</a>和<a href="https://baike.baidu.com/item/谷歌/117920" target="_blank" rel="noopener">谷歌</a>就在那时候开始广泛地使用JSON格式。</p>
+<h2 id="JSON-函数"><a href="#JSON-函数" class="headerlink" title="JSON 函数"></a>JSON 函数</h2><table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">json.dumps</td>
+<td align="left">将 Python 对象编码成 JSON 字符串</td>
+</tr>
+<tr>
+<td align="left">json.loads</td>
+<td align="left">将已编码的 JSON 字符串解码为 Python 对象</td>
+</tr>
+</tbody></table>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code class="python">json.dumps(obj, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding=&quot;utf-8&quot;, default=None, sort_keys=False, **kw)</code></pre>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>以下实例将数组编码为 JSON 格式数据：</p>
+<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><pre><code class="python">#!/usr/bin/python
+**import** json
 
+data = [ { &#39;a&#39; : 1, &#39;b&#39; : 2, &#39;c&#39; : 3, &#39;d&#39; : 4, &#39;e&#39; : 5 } ]
+
+data2 = json.dumps(data)
+**print**(data2)</code></pre>
+<p>以上代码执行结果为：</p>
+<pre><code>[{&quot;a&quot;: 1, &quot;c&quot;: 3, &quot;b&quot;: 2, &quot;e&quot;: 5, &quot;d&quot;: 4}]</code></pre><p>使用参数让 JSON 数据格式化输出：</p>
+<h4 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h4><pre><code>#!/usr/bin/python
+**import** json
+
+data = [ { &#39;a&#39; : 1, &#39;b&#39; : 2, &#39;c&#39; : 3, &#39;d&#39; : 4, &#39;e&#39; : 5 } ]
+
+data2 = json.dumps({&#39;a&#39;: &#39;Runoob&#39;, &#39;b&#39;: 7}, sort_keys=True, indent=4, separators=(&#39;,&#39;, &#39;: &#39;))
+**print**(data2)</code></pre><p>以上代码执行结果为：</p>
+<pre><code>{
+    &quot;a&quot;: &quot;Runoob&quot;,
+    &quot;b&quot;: 7
+}</code></pre>
             </div>
             <hr/>
 
@@ -538,7 +562,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mossloo.cn/posts/121022.html">https://mossloo.cn/posts/121022.html</a>
+                    <a href="https://mossloo.cn/posts/114752.html">https://mossloo.cn/posts/114752.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1008,33 +1032,29 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/123528.html">
+                <a href="/posts/114752.html">
                     <div class="card-image">
                         
-                        <img src="http://cdn.mossloo.cn/image/cartoon1.png" class="responsive-img" alt="hashlib模块">
+                        <img src="http://cdn.mossloo.cn/image/banner0.jpg" class="responsive-img" alt="json模块">
                         
-                        <span class="card-title">hashlib模块</span>
+                        <span class="card-title">json模块</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            HASHLIB模块加密模块
-md5算法
-import hashlib
-m = hashlib.md5()
-m.update(&#39;helloWorld&#39;.encode(&#39;utf8&#39;))
-print(m.hexdi
+                            JSON模块历史简要：JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。同时也易于机器解析和生成。它基于JavaScript Programming Language, Stan
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1047,6 +1067,7 @@ print(m.hexdi
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1065,23 +1086,22 @@ print(m.hexdi
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/103655.html">
+                <a href="/posts/193904.html">
                     <div class="card-image">
                         
-                        <img src="http://cdn.mossloo.cn/image/cartoon3.jpg" class="responsive-img" alt="os模块">
+                        <img src="http://cdn.mossloo.cn/image/cartoon4.png" class="responsive-img" alt="bs4库">
                         
-                        <span class="card-title">os模块</span>
+                        <span class="card-title">bs4库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            OS模块提供对操作系统进行调用的接口
-
-os.getcwd()  获取当前python脚本工作的目录路径
-os.chdir(‘dirname’) 改变当前脚本工作目录,相当于cd
-os.curdir 返回当前目录
-os.pardir 获取当
+                            from bs4 import BeautifulSoup as bs
+text= &#39;&#39;&#39;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta = charset=&#39;UTF-8&#3
                         
                     </div>
                     <div class="publish-info">

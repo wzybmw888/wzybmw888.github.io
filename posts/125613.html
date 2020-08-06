@@ -469,14 +469,14 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-05
+                    2020-08-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    956
+                    1.1k
                 </div>
                 
 
@@ -542,7 +542,29 @@ def main():
 
 
 if __name__ == &quot;__main__&quot;:
-    main()</code></pre><pre><code>logging.basicConfig 参数说明
+    main()</code></pre><p>日志文件可以在文件和控制台输出</p>
+<pre><code>import logging
+
+logger = logging.getLogger()
+# 创建一个handler，用于写入日志文件
+fh = logging.FileHandler(&#39;test2.log&#39;)
+
+# 再创建handler，用于输出控制台
+ch = logging.StreamHandler()
+
+formatter = logging.Formatter(
+    &#39;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#39;
+)
+fh.setFormatter(formatter)
+ch.setFormatter(formatter)
+logger.setLevel(logging.DEBUG) # 设置输出等级
+
+logger.addHandler(fh)
+logger.addHandler(ch)
+
+logger.debug(&#39;logger debug message&#39;)
+logger.info(&#39;logger info message&#39;)
+logger.warning(&#39;logger warning message&#39;)</code></pre><pre><code>logging.basicConfig 参数说明
     默认会创建一个 StreamHandler 并输出到 sys.stderr, 并且使用 BASIC_FORMAT(%(levelname)s:%(name)s:%(message)s) 格式化信息
 
 filename:    指定日志文件名, 此时不会再输出到 StreamHandler 中, 即使指定了新的 stream
@@ -1107,7 +1129,7 @@ datefmt
                 <a href="/posts/193904.html">
                     <div class="card-image">
                         
-                        <img src="http://cdn.mossloo.cn/image/cartoon4.jpg" class="responsive-img" alt="bs4库">
+                        <img src="http://cdn.mossloo.cn/image/cartoon4.png" class="responsive-img" alt="bs4库">
                         
                         <span class="card-title">bs4库</span>
                     </div>
@@ -1115,7 +1137,7 @@ datefmt
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            from bs5 import BeautifulSoup as bs
+                            from bs4 import BeautifulSoup as bs
 text= &#39;&#39;&#39;
 &lt;html&gt;
 &lt;head&gt;
@@ -1141,8 +1163,8 @@ text= &#39;&#39;&#39;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E5%BA%93/">
-                        <span class="chip bg-color">python库</span>
+                    <a href="/tags/python%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python模块</span>
                     </a>
                     
                 </div>
@@ -1398,7 +1420,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5k</span>&nbsp;字
+                class="white-color">5.4k</span>&nbsp;字
             
             
             
@@ -1600,7 +1622,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 		            <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
 		          </div>
 		          <div class="github-badge">
-		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">5k</span>
+		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">5.4k</span>
 		          </div>
 		</div> -->
 	
