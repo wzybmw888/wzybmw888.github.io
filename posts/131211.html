@@ -315,7 +315,7 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.mossloo.cn/image/banner')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://cdn.mossloo.cn/image/banner3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -437,8 +437,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python%E5%BA%93/">
-                                <span class="chip bg-color">python库</span>
+                            <a href="/tags/python%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">python爬虫</span>
                             </a>
                         
                     </div>
@@ -476,14 +476,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    571
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -498,7 +498,102 @@ if (windowWidth > 768) {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h3 id="一-请求和响应"><a href="#一-请求和响应" class="headerlink" title="一.请求和响应"></a>一.请求和响应</h3><p>客户端：就是一个浏览器，接受服务</p>
+<p>服务器：提供服务</p>
+<p>在爬虫开发中，请求头（header）中有三个重要参数：1.user-agent     2.referer      3.cookie</p>
+<p>cookie：客户端第一次访问服务器的时候，由服务器写入浏览器的键值对</p>
+<p>cookie的作用： 1.用户登陆状态的保持  2。可以用来做反爬虫</p>
+<p>写爬虫的步骤：</p>
+<p>1.requests发送get请求</p>
+<pre><code>import requests
+
+url = &#39;&#39;
+
+requests.get(url)</code></pre><p>2.自定义请求头</p>
+<pre><code>import requests
+
+url = &#39;https://mossloo.cn/&#39;
+
+headers = {
+    &quot;user-agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36&quot;
+}
+response = requests.get(url, headers=headers)
+
+print(response.text) # 响应的文本，字符串类型，等价于response.content.decode()
+print(response.content) #响应的源码, bytes类型</code></pre><p>3.url参数</p>
+<pre><code>import requests
+
+word = input(&quot;请输入希望查询的参数：&quot;)
+# url = f&quot;https://www.baidu.com/s?wd={word}&quot;
+# response = requests.get(url)
+
+url = &#39;https://www.baidu.com/s?&#39;
+
+params={
+    &#39;wd&#39;: word,
+    &#39;name&#39;: &#39;root&#39;
+}
+response = requests.get(url, params=params)</code></pre><h3 id="二-实战"><a href="#二-实战" class="headerlink" title="二.实战"></a>二.实战</h3><p>1.爬取百度贴吧，然后把响应保存下来</p>
+<pre><code># 爬取百度贴吧内容，获取响应文件保存到本地
+import requests
+
+url = &#39;https://tieba.baidu.com/f?kw=%E5%BE%AE%E5%8D%9A&#39;
+
+response = requests.get(url)
+
+with open(&#39;tieba.html&#39;, &#39;wb&#39;) as f:
+    f.write(response.content)</code></pre><p>2.在上一个项目基础上爬取多个页面的贴吧信息</p>
+<pre><code>import requests
+
+word = input(&#39;请输入想要查询贴吧信息：&#39;)
+
+url = &#39;https://tieba.baidu.com/f?&#39;
+
+for i in range(3):
+    # 构造url参数
+    params = {
+        &quot;kw&quot;: word,
+        &#39;pn&#39;: i*50
+    }
+    # 发送请求，获取响应
+    response = requests.get(url, params=params)
+    # 打开文件，写入数据
+    with open(f&#39;{word}-{i+1}.html&#39;, &#39;wb&#39;) as f:
+        f.write(response.content)
+</code></pre><p>3.改写为面向对象</p>
+<pre><code class="python">import requests
+
+
+class Tieba(object):
+    def __init__(self, name, pages):
+        self.url = &#39;https://tieba.baidu.com/f?&#39;
+        self.name = name
+        self.pages = pages
+
+    def get_response(self, page):
+        params = {
+            &#39;kw&#39;: self.name,
+            &#39;pn&#39;: page
+        }
+        response = requests.get(self.url,params=params)
+        return response.content
+
+    def write(self, content: bytes, page:int):
+        with open(f&#39;{self.name}-{page+1}.html&#39;, &#39;wb&#39;) as f:
+            f.write(content)
+            print(f&#39;{self.name}-{page+1}.html已经保存完成！&#39;)
+
+    def run(self):
+        for page in range(self.pages):
+            content = self.get_response(page)
+            self.write(content, page)
+
+
+if __name__ == &#39;__main__&#39;:
+    a = Tieba(&#39;宇宙&#39;, 3)
+    a.run()
+</code></pre>
+
             </div>
             <hr/>
 
@@ -523,7 +618,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mossloo.cn/posts/null.html">https://mossloo.cn/posts/null.html</a>
+                    <a href="https://mossloo.cn/posts/131211.html">https://mossloo.cn/posts/131211.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -561,8 +656,8 @@ if (windowWidth > 768) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python%E5%BA%93/">
-                                    <span class="chip bg-color">python库</span>
+                                <a href="/tags/python%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">python爬虫</span>
                                 </a>
                             
                         </div>
@@ -998,10 +1093,10 @@ if (windowWidth > 768) {
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/posts/null.html">
+                <a href="/posts/131211.html">
                     <div class="card-image">
                         
-                        <img src="http://cdn.mossloo.cn/image/banner" class="responsive-img" alt="request模块">
+                        <img src="http://cdn.mossloo.cn/image/banner3.jpg" class="responsive-img" alt="request模块">
                         
                         <span class="card-title">request模块</span>
                     </div>
@@ -1009,7 +1104,10 @@ if (windowWidth > 768) {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            一.请求和响应客户端：就是一个浏览器，接受服务
+服务器：提供服务
+在爬虫开发中，请求头（header）中有三个重要参数：1.user-agent     2.referer      3.cookie
+cookie：客户端第一次访问服务器的
                         
                     </div>
                     <div class="publish-info">
@@ -1032,8 +1130,8 @@ if (windowWidth > 768) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E5%BA%93/">
-                        <span class="chip bg-color">python库</span>
+                    <a href="/tags/python%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">python爬虫</span>
                     </a>
                     
                 </div>
@@ -1287,7 +1385,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.6k</span>&nbsp;字
+                class="white-color">6.1k</span>&nbsp;字
             
             
             
@@ -1489,7 +1587,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 		            <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
 		          </div>
 		          <div class="github-badge">
-		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">5.6k</span>
+		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">6.1k</span>
 		          </div>
 		</div> -->
 	
