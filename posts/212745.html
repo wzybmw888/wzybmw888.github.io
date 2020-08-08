@@ -469,14 +469,14 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-07
+                    2020-08-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    284
+                    528
                 </div>
                 
 
@@ -510,9 +510,50 @@ if (windowWidth > 768) {
 <p>爬取的数据是公开的、非盈利的。</p>
 <h3 id="1-2-Python爬虫"><a href="#1-2-Python爬虫" class="headerlink" title="1.2 Python爬虫"></a>1.2 Python爬虫</h3><p>使用Pyhon编写的爬虫脚本（程序）可以完成定时、定量、指定目标（WEB站点）的数据爬取，主要使用多（单）线程/进程、网络请求库 、数据解析、数据存储、任务调度等相关技术。</p>
 <p>Python爬虫工程师可以完成接口测试、功能性测试、性能测试和集成测试。</p>
-<h1 id="二、爬虫和Web后端服务的关系"><a href="#二、爬虫和Web后端服务的关系" class="headerlink" title="二、爬虫和Web后端服务的关系"></a>二、爬虫和Web后端服务的关系</h1><p>爬虫使用网络请求库，相当于客户端请求，Web后端服务根据请求响应数据</p>
-<p><img src="C:%5CUsers%5C14720%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1596810267387.png" alt="1596810267387"></p>
-
+<h1 id="二、爬虫和Web后端服务的关系"><a href="#二、爬虫和Web后端服务的关系" class="headerlink" title="二、爬虫和Web后端服务的关系"></a>二、爬虫和Web后端服务的关系</h1><p>爬虫使用网络请求库，相当于客户端请求，Web后端服务根据请求响应数据。</p>
+<p>爬虫向web服务器发送HTTP请求，正确的接受响应数据，然后根据数据类型（Content-Type）进行数据的解析和存储。</p>
+<p>爬虫程序在发起请求前，需要而伪造浏览器（User-Agent请求头），然后再向服务器发送请求。，响应200成功率很高。</p>
+<p><img src="http://cdn.mossloo.cn//img/QQ%E6%88%AA%E5%9B%BE20200807223819.png" alt=""></p>
+<p>HTTP报文格式如下：</p>
+<p><img src="http://cdn.mossloo.cn/img/QQ%E6%88%AA%E5%9B%BE20200808004154.png" alt=""></p>
+<h1 id="三、Python爬虫相关技术库"><a href="#三、Python爬虫相关技术库" class="headerlink" title="三、Python爬虫相关技术库"></a>三、Python爬虫相关技术库</h1><p>网络请求：</p>
+<ul>
+<li>urllib</li>
+<li>requests/urllib3</li>
+<li>selenium(UI自动测试，动态js渲染)</li>
+<li>appium(手机App的爬虫获UI测试)</li>
+</ul>
+<p>数据解析：</p>
+<ul>
+<li>re正则</li>
+<li>xpath</li>
+<li>bs4</li>
+<li>json</li>
+</ul>
+<p>数据存储</p>
+<ul>
+<li>pymysql</li>
+<li>mongodb</li>
+<li>elasticsearch</li>
+</ul>
+<p>多任务库：</p>
+<ul>
+<li>多线程(threading)、线程队列(queue)</li>
+<li>协程(asynio、gevent/eventlet)</li>
+</ul>
+<p>爬虫框架：</p>
+<ul>
+<li>scrapy</li>
+<li>scrapy-redis分布式（多机爬虫）</li>
+</ul>
+<h1 id="四、常见的反扒策略"><a href="#四、常见的反扒策略" class="headerlink" title="四、常见的反扒策略"></a>四、常见的反扒策略</h1><ul>
+<li>UA（User-Agent）策略</li>
+<li>登录限制（Cookie）策略</li>
+<li>请求频次（IP代理）策略</li>
+<li>验证码（图片-云打码，文字或者物品图片选择验证、滑块）</li>
+<li>动态js（Selenum/Splash/api接口）策略</li>
+</ul>
+<h1 id="五、爬虫库URLLIB很重要"><a href="#五、爬虫库URLLIB很重要" class="headerlink" title="五、爬虫库URLLIB很重要"></a>五、爬虫库URLLIB很重要</h1>
             </div>
             <hr/>
 
@@ -1308,7 +1349,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.4k</span>&nbsp;字
+                class="white-color">6.8k</span>&nbsp;字
             
             
             
@@ -1510,7 +1551,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 		            <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
 		          </div>
 		          <div class="github-badge">
-		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">6.4k</span>
+		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">6.8k</span>
 		          </div>
 		</div> -->
 	

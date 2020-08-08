@@ -469,21 +469,21 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-06
+                    2020-08-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    354
+                    474
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -500,7 +500,7 @@ if (windowWidth > 768) {
             <div id="articleContent">
                 <h1 id="JSON模块"><a href="#JSON模块" class="headerlink" title="JSON模块"></a>JSON模块</h1><h3 id="历史简要："><a href="#历史简要：" class="headerlink" title="历史简要："></a>历史简要：</h3><p>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。同时也易于机器解析和生成。它基于JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999的一个子集。</p>
 <p>JSON是[Douglas Crockford](<a href="https://baike.baidu.com/item/Douglas" target="_blank" rel="noopener">https://baike.baidu.com/item/Douglas</a> Crockford/5960317)在2001年开始推广使用的数据格式，在2005年-2006年正式成为主流的数据格式，<a href="https://baike.baidu.com/item/雅虎/108276" target="_blank" rel="noopener">雅虎</a>和<a href="https://baike.baidu.com/item/谷歌/117920" target="_blank" rel="noopener">谷歌</a>就在那时候开始广泛地使用JSON格式。</p>
-<h2 id="JSON-函数"><a href="#JSON-函数" class="headerlink" title="JSON 函数"></a>JSON 函数</h2><table>
+<h1 id="JSON-函数"><a href="#JSON-函数" class="headerlink" title="JSON 函数"></a>JSON 函数</h1><table>
 <thead>
 <tr>
 <th align="left">函数</th>
@@ -518,26 +518,27 @@ if (windowWidth > 768) {
 </tbody></table>
 <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code class="python">json.dumps(obj, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding=&quot;utf-8&quot;, default=None, sort_keys=False, **kw)</code></pre>
 <h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>以下实例将数组编码为 JSON 格式数据：</p>
-<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><pre><code class="python">#!/usr/bin/python
-**import** json
+<pre><code class="python">#!/usr/bin/python
+import json
 
 data = [ { &#39;a&#39; : 1, &#39;b&#39; : 2, &#39;c&#39; : 3, &#39;d&#39; : 4, &#39;e&#39; : 5 } ]
 
 data2 = json.dumps(data)
-**print**(data2)</code></pre>
+print(data2)</code></pre>
 <p>以上代码执行结果为：</p>
 <pre><code>[{&quot;a&quot;: 1, &quot;c&quot;: 3, &quot;b&quot;: 2, &quot;e&quot;: 5, &quot;d&quot;: 4}]</code></pre><p>使用参数让 JSON 数据格式化输出：</p>
-<h4 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h4><pre><code>#!/usr/bin/python
-**import** json
+<pre><code>#!/usr/bin/python
+import json
 
 data = [ { &#39;a&#39; : 1, &#39;b&#39; : 2, &#39;c&#39; : 3, &#39;d&#39; : 4, &#39;e&#39; : 5 } ]
 
 data2 = json.dumps({&#39;a&#39;: &#39;Runoob&#39;, &#39;b&#39;: 7}, sort_keys=True, indent=4, separators=(&#39;,&#39;, &#39;: &#39;))
-**print**(data2)</code></pre><p>以上代码执行结果为：</p>
+print(data2)</code></pre><p>以上代码执行结果为：</p>
 <pre><code>{
     &quot;a&quot;: &quot;Runoob&quot;,
     &quot;b&quot;: 7
-}</code></pre>
+}</code></pre><h3 id="序列化和反序列化"><a href="#序列化和反序列化" class="headerlink" title="序列化和反序列化"></a>序列化和反序列化</h3><p> 序列化分为两大部分：序列化和反序列化。序列化是这个过程的第一部分，将数据分解成字节流，以便存储在文件中或在网络上传输。反序列化就是打开字节流并重构对象。对象序列化不仅要将基本数据类型转换成字节表示，有时还要恢复数据。恢复数据要求有恢复数据的对象实例。 </p>
+
             </div>
             <hr/>
 
@@ -1328,7 +1329,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.4k</span>&nbsp;字
+                class="white-color">6.8k</span>&nbsp;字
             
             
             
@@ -1530,7 +1531,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 		            <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
 		          </div>
 		          <div class="github-badge">
-		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">6.4k</span>
+		            <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">6.8k</span>
 		          </div>
 		</div> -->
 	
